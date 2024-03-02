@@ -57,7 +57,7 @@ namespace exam_app
 
 		private void btn_start_exam_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("selected exam id " + selectedExam + " std id = "+currStdId);
+			MessageBox.Show("selected exam id " + selectedExam + " std id = " + currStdId);
 		}
 
 		private void dgv_exams_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -87,6 +87,14 @@ namespace exam_app
 					btn_start_exam.Enabled = true;
 				}
 			}
+		}
+
+		private void btn_back_Click(object sender, EventArgs e)
+		{
+			var stdMain = new StudentMainForm(currStdId);
+			this.Hide();
+			stdMain.ShowDialog();
+			Close();
 		}
 	}
 }

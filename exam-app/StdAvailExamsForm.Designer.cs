@@ -33,6 +33,7 @@
 			dgv_exams = new DataGridView();
 			btn_show_exams = new Button();
 			label1 = new Label();
+			btn_back = new Button();
 			((System.ComponentModel.ISupportInitialize)dgv_exams).BeginInit();
 			SuspendLayout();
 			// 
@@ -85,11 +86,22 @@
 			label1.TabIndex = 5;
 			label1.Text = "Course : ";
 			// 
+			// btn_back
+			// 
+			btn_back.Location = new Point(96, 355);
+			btn_back.Name = "btn_back";
+			btn_back.Size = new Size(159, 29);
+			btn_back.TabIndex = 6;
+			btn_back.Text = "Back";
+			btn_back.UseVisualStyleBackColor = true;
+			btn_back.Click += btn_back_Click;
+			// 
 			// StdAvailExamsForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(800, 450);
+			Controls.Add(btn_back);
 			Controls.Add(label1);
 			Controls.Add(btn_show_exams);
 			Controls.Add(dgv_exams);
@@ -110,5 +122,6 @@
 		private DataGridView dgv_exams;
 		private Button btn_show_exams;
 		private Label label1;
+		private Button btn_back;
 	}
 }
