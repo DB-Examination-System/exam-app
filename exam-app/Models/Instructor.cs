@@ -7,9 +7,9 @@ public partial class Instructor
 {
     public int InsId { get; set; }
 
-    public string InsLname { get; set; } = null!;
-
     public string InsFname { get; set; } = null!;
+
+    public string InsLname { get; set; } = null!;
 
     public DateOnly? InsBirthDate { get; set; }
 
