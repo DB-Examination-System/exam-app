@@ -279,7 +279,7 @@ namespace exam_app
                     ExId = exam_id,
                     StId = std_id,
                     QId = examQuestionList[i].QId,
-                    StdAnswer = stdAns[i] ?? "no answer",
+                    StdAnswer = stdAns[i]== null ? "no answer": stdAns[i],
                 });
 
             }
