@@ -17,7 +17,7 @@ namespace exam_app
     {
         // development part
         private int std_id = 1;
-        private int exam_id = 117; // 
+        private int exam_id = 117; 
         ItidbContext appContext = new ItidbContext();
         List<Question> examQuestionList; // questions of exam
         List<List<String>> questionChoices = new List<List<string>>();
@@ -271,15 +271,16 @@ namespace exam_app
 
         void submitAnswers()
         {
+          
             for (int i = 0; i < examQuestionList.Count; i++)
             {
-                
+               
                 appContext.ExamStdQuestions.Add(new ExamStdQuestion()
                 {
                     ExId = exam_id,
                     StId = std_id,
                     QId = examQuestionList[i].QId,
-                    StdAnswer = stdAns[i] ?? "no answer",
+                    StdAnswer = stdAns[i]== null ? "no answer": stdAns[i],
                 });
 
             }
