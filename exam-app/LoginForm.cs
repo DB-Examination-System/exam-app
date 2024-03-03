@@ -44,8 +44,9 @@ namespace exam_app
                         MessageBox.Show(user.Role);
                         if (user.Role.ToLower().Trim() == "student")
                         {
+                            int currStdId = iticontext.Students.FirstOrDefault(u => u.UserId == user.UserId).StId;
                             Hide();
-                            StudentMainForm studentMainForm = new StudentMainForm();
+                            StudentMainForm studentMainForm = new StudentMainForm(currStdId);
                             studentMainForm.ShowDialog();
                             this.Close();
                         }
@@ -76,7 +77,7 @@ namespace exam_app
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

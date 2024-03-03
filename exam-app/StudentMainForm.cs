@@ -12,9 +12,19 @@ namespace exam_app
 {
 	public partial class StudentMainForm : Form
 	{
-		public StudentMainForm()
+		int currStdId;
+		public StudentMainForm(int id)
 		{
 			InitializeComponent();
+			currStdId = id;
+		}
+
+		private void btn_to_avail_exams_form_Click(object sender, EventArgs e)
+		{
+			Hide();
+			StdAvailExamsForm stdAvailExamsForm = new StdAvailExamsForm(currStdId);
+			stdAvailExamsForm.ShowDialog();
+			Close();
 		}
 	}
 }
