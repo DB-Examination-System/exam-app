@@ -20,7 +20,7 @@ as
 			Q_type = 'Choose' ORDER BY NEWID()
 
 	) AS RandomQuestions;
---------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 -- 2- update exam info
 create Procedure updateExam 
