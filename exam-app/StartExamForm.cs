@@ -16,8 +16,8 @@ namespace exam_app
     public partial class StartExamForm : Form
     {
         // development part
-        private int std_id = 1;
-        private int exam_id = 117; 
+        private int std_id;
+        private int exam_id; 
         ItidbContext appContext = new ItidbContext();
         List<Question> examQuestionList; // questions of exam
         List<List<String>> questionChoices = new List<List<string>>();
@@ -31,11 +31,11 @@ namespace exam_app
         private int currentQuestionPanelIndex = 0;
 
 
-        public StartExamForm()
+        public StartExamForm(int stdId, int examId)
         {
             InitializeComponent();
-
-            //getExamQuestions();
+            std_id = stdId;
+            exam_id = examId;
         }
 
         void getExamDuration()
@@ -99,7 +99,7 @@ namespace exam_app
                 questionPanel = new Panel();
                 questionPanel.Dock = DockStyle.Top;
                 questionPanel.Height = 500;
-                questionPanel.BackColor = SystemColors.ActiveBorder;
+                questionPanel.BackColor = SystemColors.ControlLightLight;
                 questionPanel.Name = "panel_q" + (i + 1);
                 questionPanel.Visible = false;
 
@@ -289,7 +289,7 @@ namespace exam_app
             timer1.Stop();
            
             Hide();
-            LoginForm form = new LoginForm();
+            FinalGradeForm form = new FinalGradeForm(std_id, exam_id);
             form.ShowDialog();
             this.Close();
         }
