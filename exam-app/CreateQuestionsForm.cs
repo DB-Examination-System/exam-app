@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace exam_app
 {
-    public partial class CRUD_Instructor : Form
+    public partial class CreateQuestionsForm : Form
     {
-        public CRUD_Instructor()
+        public CreateQuestionsForm()
         {
             InitializeComponent();
         }
