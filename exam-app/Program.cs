@@ -12,7 +12,7 @@ namespace exam_app
 			// see https://aka.ms/applicationconfiguration.
 	
 			
-			Application.Run(new FinalGradeForm(1,3));
+			Application.Run(new StartExamForm());
 
 		}
 	}

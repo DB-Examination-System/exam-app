@@ -53,12 +53,13 @@
             // 
             // btn_next
             // 
+            btn_next.BackColor = SystemColors.MenuHighlight;
             btn_next.Location = new Point(784, 552);
             btn_next.Name = "btn_next";
             btn_next.Size = new Size(204, 54);
             btn_next.TabIndex = 1;
             btn_next.Text = "NEXT";
-            btn_next.UseVisualStyleBackColor = true;
+            btn_next.UseVisualStyleBackColor = false;
             btn_next.Click += btn_next_Click;
             // 
             // button1
