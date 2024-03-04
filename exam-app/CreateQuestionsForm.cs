@@ -16,5 +16,10 @@ namespace exam_app
         {
             InitializeComponent();
         }
+
+        private void CreateQuestionsForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
