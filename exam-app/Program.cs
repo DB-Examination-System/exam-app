@@ -10,18 +10,12 @@ namespace exam_app
 		{
 			// To customize application configuration such as set high DPI settings or default font,
 			// see https://aka.ms/applicationconfiguration.
-	
-			
-			Application.Run(new LoginForm());
+
 			ApplicationConfiguration.Initialize();
 
-            //Application.Run(new Form1());
-            //Application.Run(new StartExamForm(1,117));
-            //Application.Run(new Form1());
+			Application.Run(new ShowStudentGradesForm());
 
-
-            //Application.Run(new LoginForm());
-            Application.Run(new Form1());
+            
 
 
 
