@@ -321,9 +321,18 @@ namespace exam_app
 
                                 if (result == DialogResult.Yes)
                                 {
+                                    // Remove from student_inTrack table
+                                    var studentInTrackToRemove = context.StudentsInTracks.FirstOrDefault(st => st.StudentId == studentId);
+                                    if (studentInTrackToRemove != null)
+                                    {
+                                        context.StudentsInTracks.Remove(studentInTrackToRemove);
+                                    }
+
+                                    // Remove login account
                                     context.LoginAccounts.Remove(loginAccountToRemove);
                                     context.SaveChanges();
 
+                                    // Remove student
                                     context.Students.Remove(student);
                                     context.SaveChanges();
 
@@ -358,11 +367,6 @@ namespace exam_app
                     MessageBox.Show("Please enter a valid student ID.");
                 }
             }
-            else
-            {
-                MessageBox.Show("Please enter the student ID.");
-            }
-
         }
     }
 }

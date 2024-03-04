@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace exam_app
 {
-    public partial class SpecificInsGrades : Form
+    public partial class StudentsCoursesGradesForm : Form
     {
 
         ItidbContext context;
         int Ins_id;
-        public SpecificInsGrades(int ins_id)
+        public StudentsCoursesGradesForm(int ins_id)
         {
             this.Ins_id = ins_id;
             context = new ItidbContext();
