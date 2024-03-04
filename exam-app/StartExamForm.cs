@@ -19,6 +19,9 @@ namespace exam_app
         private int std_id = 1;
         private int exam_id = 3; 
 
+
+        private int std_id;
+        private int exam_id; 
         ItidbContext appContext = new ItidbContext();
         List<Question> examQuestionList; // questions of exam
         List<List<String>> questionChoices = new List<List<string>>();

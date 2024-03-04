@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace exam_app
 {
-    public partial class SpecificInsGrades : Form
+    public partial class StudentsCoursesGradesForm : Form
     {
 
         ItidbContext context;
         int Ins_id;
-        public SpecificInsGrades(int ins_id)
+        public StudentsCoursesGradesForm(int ins_id)
         {
             this.Ins_id = ins_id;
             context = new ItidbContext();
@@ -75,6 +75,15 @@ namespace exam_app
             {
                 MessageBox.Show("Please select a course.");
             }
+        }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            //Switch to Assign Track, number just for test
+            this.Hide();
+            InstructorMainForm inst_Mainform = new InstructorMainForm(Ins_id);
+            inst_Mainform.FormClosed += (s, args) => this.Close();
+            inst_Mainform.Show();
         }
     }
 }

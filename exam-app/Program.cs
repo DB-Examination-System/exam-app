@@ -13,7 +13,18 @@ namespace exam_app
 	
 			
 			Application.Run(new LoginForm());
+			ApplicationConfiguration.Initialize();
 
-		}
+            //Application.Run(new Form1());
+            //Application.Run(new StartExamForm(1,117));
+            //Application.Run(new Form1());
+
+
+            //Application.Run(new LoginForm());
+            Application.Run(new Form1());
+
+
+
+        }
 	}
 }

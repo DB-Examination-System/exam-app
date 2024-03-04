@@ -125,13 +125,13 @@ namespace exam_app
         {
             label1.Visible = true;
             txt_id.Visible = true;
-            btn_showData.Visible = true;
+            btn_searchByID.Visible = true;
         }
         private void btn_remove_Click(object sender, EventArgs e)
         {
             label1.Visible = true;
             txt_id.Visible = true;
-            btn_showData.Visible = true;
+            btn_searchByID.Visible = true;
 
             var instructor = db.Instructors.FirstOrDefault(i => i.InsId == insid);
 

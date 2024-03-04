@@ -30,7 +30,7 @@
         {
             txt_id = new TextBox();
             label1 = new Label();
-            btn_showData = new Button();
+            btn_searchByID = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -68,16 +68,18 @@
             label1.TabIndex = 1;
             label1.Text = "Enter Instructor ID";
             // 
-            // btn_showData
+            // btn_searchByID
             // 
-            btn_showData.Location = new Point(611, 27);
-            btn_showData.Margin = new Padding(4);
-            btn_showData.Name = "btn_showData";
-            btn_showData.Size = new Size(142, 48);
-            btn_showData.TabIndex = 2;
-            btn_showData.Text = "Show Data";
-            btn_showData.UseVisualStyleBackColor = true;
-            btn_showData.Click += btn_showData_Click;
+            btn_searchByID.BackColor = SystemColors.GradientActiveCaption;
+            btn_searchByID.ForeColor = Color.Black;
+            btn_searchByID.Location = new Point(611, 27);
+            btn_searchByID.Margin = new Padding(4);
+            btn_searchByID.Name = "btn_searchByID";
+            btn_searchByID.Size = new Size(142, 48);
+            btn_searchByID.TabIndex = 2;
+            btn_searchByID.Text = "Search";
+            btn_searchByID.UseVisualStyleBackColor = false;
+            btn_searchByID.Click += btn_showData_Click;
             // 
             // label2
             // 
@@ -187,6 +189,7 @@
             // 
             // btn_add
             // 
+            btn_add.BackColor = SystemColors.GradientActiveCaption;
             btn_add.Font = new Font("Segoe UI Variable Display", 11.8125F);
             btn_add.Location = new Point(230, 369);
             btn_add.Margin = new Padding(4);
@@ -194,11 +197,12 @@
             btn_add.Size = new Size(142, 54);
             btn_add.TabIndex = 18;
             btn_add.Text = "Add";
-            btn_add.UseVisualStyleBackColor = true;
+            btn_add.UseVisualStyleBackColor = false;
             btn_add.Click += btn_add_Click;
             // 
             // btn_update
             // 
+            btn_update.BackColor = SystemColors.GradientActiveCaption;
             btn_update.Font = new Font("Segoe UI Variable Display", 11.8125F);
             btn_update.Location = new Point(434, 369);
             btn_update.Margin = new Padding(4);
@@ -206,7 +210,7 @@
             btn_update.Size = new Size(142, 54);
             btn_update.TabIndex = 21;
             btn_update.Text = "Update";
-            btn_update.UseVisualStyleBackColor = true;
+            btn_update.UseVisualStyleBackColor = false;
             btn_update.Click += btn_update_Click;
             // 
             // btn_remove
@@ -238,7 +242,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(btn_showData);
+            Controls.Add(btn_searchByID);
             Controls.Add(label1);
             Controls.Add(txt_id);
             Controls.Add(txt_phone);
@@ -258,7 +262,7 @@
 
         private TextBox txt_id;
         private Label label1;
-        private Button btn_showData;
+        private Button btn_searchByID;
         private Label label2;
         private Label label3;
         private Label label4;

@@ -84,6 +84,12 @@ namespace exam_app
             context.StudentsInTracks.Add(newStudentInTrack);
             context.SaveChanges();
             MessageBox.Show("Student in track added successfully.");
+
+            //reset
+            branch_combo.SelectedValue = -1;
+            tracks_combo.SelectedValue = -1;
+            duration_txt.Text = "";
+            
         }
     }
 }
