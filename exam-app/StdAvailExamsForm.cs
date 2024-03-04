@@ -57,8 +57,14 @@ namespace exam_app
 
 		private void btn_start_exam_Click(object sender, EventArgs e)
 		{
-			MessageBox.Show("selected exam id " + selectedExam + " std id = " + currStdId);
-		}
+            MessageBox.Show("selected exam id " + selectedExam + " std id = " + currStdId);
+            Hide();
+            StartExamForm form = new StartExamForm(currStdId, selectedExam);
+            form.ShowDialog();
+            this.Close();
+
+
+        }
 
 		private void dgv_exams_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
 		{
