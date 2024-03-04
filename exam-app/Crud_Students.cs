@@ -321,110 +321,6 @@ namespace exam_app
 
                                 if (result == DialogResult.Yes)
                                 {
-                                    context.LoginAccounts.Remove(loginAccountToRemove);
-                                    context.SaveChanges();
-
-                                    context.Students.Remove(student);
-                                    context.SaveChanges();
-
-                                    MessageBox.Show("Student and associated login account removed successfully.");
-                                    std_id_txt.Text = "";
-                                    //
-                                    stdid_lbl.Visible = false;
-                                    std_id_txt.Visible = false;
-                                    title_Form_lbl.Visible = true;
-                                    ok_btn.Visible = false;
-                                    removeOk_btn.Visible = false;
-                                }
-                                // If the user selects No, do nothing
-                            }
-                            else
-                            {
-                                MessageBox.Show("No login account found with the provided student ID.");
-                            }
-                        }
-                        else
-                        {
-            {
-                var student = context.Students.FirstOrDefault(s => s.StId == std_id);
-                if (student != null)
-                {
-                    // Update student data
-                    student.StFname = fname_txt.Text;
-                    student.StLname = lname_txt.Text;
-                    student.StAge = int.Parse(age_txt.Text);
-                    student.City = city_txt.Text;
-                    student.Street = street_txt.Text;
-                    student.StPhone = int.Parse(phoneNumber_txt.Text);
-                    student.StGender = gender_combo.SelectedItem.ToString();
-                    //
-                    student.StBirthdate = selectedDate;
-
-                    // Update login account data
-                    var loginAccount = context.LoginAccounts.FirstOrDefault(l => l.UserId == student.UserId);
-                    if (loginAccount != null)
-                    {
-                        loginAccount.UserName = username_txt.Text;
-                        loginAccount.Role = role_txt.Text;
-                        loginAccount.Password = passw_txt.Text;
-                    }
-
-                    context.SaveChanges();
-
-                    MessageBox.Show("Data updated successfully.");
-                    // clear all txtboxes
-                    fname_txt.Text = lname_txt.Text = age_txt.Text = phoneNumber_txt.Text = street_txt.Text =
-                        city_txt.Text = passw_txt.Text = passw_txt.Text = username_txt.Text = passw_txt.Text = role_txt.Text = std_id_txt.Text = "";
-                    gender_combo.SelectedIndex = -1;
-                    //reset datePicker
-                    birthdate_picker.Value = DateTime.Today;
-                    //back title and hide id txtbox
-                    stdid_lbl.Visible = false;
-                    std_id_txt.Visible = false;
-                    title_Form_lbl.Visible = true;
-                    ok_btn.Visible = false;
-
-                }
-                else
-                {
-                    MessageBox.Show("Student not found.");
-                }
-            }
-        }
-
-        private void remove_btn_Click(object sender, EventArgs e)
-        {
-            stdid_lbl.Visible = true;
-            std_id_txt.Visible = true;
-            ok_btn.Visible = true;
-            title_Form_lbl.Visible = false;
-            ok_btn.Visible = false;
-            // Remove
-            removeOk_btn.Visible = true;
-        }
-
-        private void removeOk_btn_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(std_id_txt.Text))
-            {
-                if (int.TryParse(std_id_txt.Text, out int studentId))
-                {
-                    var student = context.Students.FirstOrDefault(s => s.StId == studentId);
-
-                    if (student != null)
-                    {
-                        if (student.UserId != null)
-                        {
-                            int userId = (int)student.UserId;
-                            var loginAccountToRemove = context.LoginAccounts.FirstOrDefault(l => l.UserId == userId);
-
-                            if (loginAccountToRemove != null)
-                            {
-                                // Confirm with the user before deleting
-                                DialogResult result = MessageBox.Show("Are you sure you want to delete the student along with their login account?", "Confirmation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-                                if (result == DialogResult.Yes)
-                                {
                                     // Remove from student_inTrack table
                                     var studentInTrackToRemove = context.StudentsInTracks.FirstOrDefault(st => st.StudentId == studentId);
                                     if (studentInTrackToRemove != null)
@@ -471,11 +367,6 @@ namespace exam_app
                     MessageBox.Show("Please enter a valid student ID.");
                 }
             }
-            else
-            {
-                MessageBox.Show("Please enter the student ID.");
-            }
-
         }
     }
 }

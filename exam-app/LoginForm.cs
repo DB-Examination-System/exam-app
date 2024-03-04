@@ -52,10 +52,10 @@ namespace exam_app
                         }
                         else if (user.Role.Trim() == "instructor")
                         {
-                            Hide();
-                            InstructorMainForm instructorMainForm = new InstructorMainForm();
-                            instructorMainForm.ShowDialog();
-                            this.Close();
+                            //Hide();
+                            //InstructorMainForm instructorMainForm = new InstructorMainForm();
+                            //instructorMainForm.ShowDialog();
+                            //this.Close();
                         }
                         else if (user.Role.Trim() == "admin")
                         {

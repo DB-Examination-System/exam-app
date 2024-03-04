@@ -81,9 +81,9 @@ namespace exam_app
         {
             //Switch to Assign Track, number just for test
             this.Hide();
-            InstructorMainForm inst_Mainform = new InstructorMainForm(Ins_id);
-            inst_Mainform.FormClosed += (s, args) => this.Close();
-            inst_Mainform.Show();
+            //InstructorMainForm inst_Mainform = new InstructorMainForm(Ins_id);
+            //inst_Mainform.FormClosed += (s, args) => this.Close();
+            //inst_Mainform.Show();
         }
     }
 }

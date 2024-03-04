@@ -15,11 +15,6 @@ namespace exam_app
 {
     public partial class StartExamForm : Form
     {
-        // development part
-        private int std_id = 1;
-        private int exam_id = 3; 
-
-
         private int std_id;
         private int exam_id; 
         ItidbContext appContext = new ItidbContext();
@@ -227,7 +222,7 @@ namespace exam_app
         }
         private void btn_next_Click(object sender, EventArgs e)
         {
-            if (currentQuestionPanelIndex < questionViews.Count - 1)
+            if (currentQuestionPanelIndex <= questionViews.Count - 1)
             {
                 currentQuestionPanelIndex++;
                 ShowQuestion(currentQuestionPanelIndex);
