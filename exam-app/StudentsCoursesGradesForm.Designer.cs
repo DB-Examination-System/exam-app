@@ -107,6 +107,7 @@
             back_btn.TabIndex = 19;
             back_btn.Text = "Back";
             back_btn.UseVisualStyleBackColor = false;
+            back_btn.Click += back_btn_Click;
             // 
             // StudentsCoursesGradesForm
             // 

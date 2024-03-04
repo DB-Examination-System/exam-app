@@ -76,5 +76,14 @@ namespace exam_app
                 MessageBox.Show("Please select a course.");
             }
         }
+
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            //Switch to Assign Track, number just for test
+            this.Hide();
+            InstructorMainForm inst_Mainform = new InstructorMainForm(Ins_id);
+            inst_Mainform.FormClosed += (s, args) => this.Close();
+            inst_Mainform.Show();
+        }
     }
 }
