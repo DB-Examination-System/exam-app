@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             label1 = new Label();
             cb_Courses = new ComboBox();
             DGV_Crs_Questions = new DataGridView();
@@ -272,29 +273,22 @@
             ((System.ComponentModel.ISupportInitialize)DGV_Crs_Questions).EndInit();
             ResumeLayout(false);
             PerformLayout();
+
+            SuspendLayout();
+            // 
+            // CreateQuestionsForm
+            // 
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Name = "CreateQuestionsForm";
+            Text = "CreateQuestionsForm";
+            Load += CreateQuestionsForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private Label label1;
-        private ComboBox cb_Courses;
-        private DataGridView DGV_Crs_Questions;
-        private Label label2;
-        private ComboBox cb_QuestionType;
-        private TextBox txt_QuesContent;
-        private Label Question_Content;
-        private TextBox txt_Choice1;
-        private TextBox txt_Choice2;
-        private TextBox txt_Choice3;
-        private TextBox txt_Choice4;
-        private Label Choice1;
-        private Label Choice2;
-        private Label Choice3;
-        private Label Choice4;
-        private ComboBox cb_TorF_ans;
-        private Label Answer;
-        private ComboBox Cb_CorrectAnswer;
-        private Label Correct_Answer;
-        private Button btn_AddQuestion;
+     
     }
 }

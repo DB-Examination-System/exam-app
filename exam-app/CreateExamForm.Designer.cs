@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             cmb_ins_courses = new ComboBox();
             label1 = new Label();
             btn_generate_exam = new Button();
@@ -73,7 +73,7 @@
             // btn_generate_exam
             // 
             btn_generate_exam.Font = new Font("Tahoma", 13.8F);
-            btn_generate_exam.Location = new Point(393, 183);
+            btn_generate_exam.Location = new Point(393, 204);
             btn_generate_exam.Name = "btn_generate_exam";
             btn_generate_exam.Size = new Size(190, 46);
             btn_generate_exam.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             cmb_noOfTFQ.Font = new Font("Tahoma", 12F);
             cmb_noOfTFQ.FormattingEnabled = true;
-            cmb_noOfTFQ.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
+            cmb_noOfTFQ.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
             cmb_noOfTFQ.Location = new Point(1128, 63);
             cmb_noOfTFQ.Name = "cmb_noOfTFQ";
             cmb_noOfTFQ.Size = new Size(192, 32);
@@ -115,7 +115,7 @@
             // 
             cmb_noChooseQ.Font = new Font("Tahoma", 12F);
             cmb_noChooseQ.FormattingEnabled = true;
-            cmb_noChooseQ.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
+            cmb_noChooseQ.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" });
             cmb_noChooseQ.Location = new Point(1128, 113);
             cmb_noChooseQ.Name = "cmb_noChooseQ";
             cmb_noChooseQ.Size = new Size(192, 32);
@@ -126,19 +126,19 @@
             DGV_exam_question.AllowUserToAddRows = false;
             DGV_exam_question.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DGV_exam_question.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DGV_exam_question.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            DGV_exam_question.DefaultCellStyle = dataGridViewCellStyle1;
             DGV_exam_question.Dock = DockStyle.Bottom;
-            DGV_exam_question.Location = new Point(0, 256);
+            DGV_exam_question.Location = new Point(0, 308);
             DGV_exam_question.Name = "DGV_exam_question";
             DGV_exam_question.RowHeadersWidth = 51;
-            DGV_exam_question.Size = new Size(1351, 266);
+            DGV_exam_question.Size = new Size(1351, 286);
             DGV_exam_question.TabIndex = 7;
             // 
             // DTP_examDate
@@ -210,7 +210,7 @@
             // btn_update_exam
             // 
             btn_update_exam.Font = new Font("Tahoma", 13.8F);
-            btn_update_exam.Location = new Point(589, 183);
+            btn_update_exam.Location = new Point(589, 204);
             btn_update_exam.Name = "btn_update_exam";
             btn_update_exam.Size = new Size(214, 46);
             btn_update_exam.TabIndex = 15;
@@ -221,7 +221,7 @@
             // btn_del_exam
             // 
             btn_del_exam.Font = new Font("Tahoma", 13.8F);
-            btn_del_exam.Location = new Point(818, 183);
+            btn_del_exam.Location = new Point(818, 204);
             btn_del_exam.Name = "btn_del_exam";
             btn_del_exam.Size = new Size(234, 46);
             btn_del_exam.TabIndex = 16;
@@ -232,7 +232,7 @@
             // btn_regenerate_Q
             // 
             btn_regenerate_Q.Font = new Font("Tahoma", 13.8F);
-            btn_regenerate_Q.Location = new Point(1068, 183);
+            btn_regenerate_Q.Location = new Point(1068, 204);
             btn_regenerate_Q.Name = "btn_regenerate_Q";
             btn_regenerate_Q.Size = new Size(252, 46);
             btn_regenerate_Q.TabIndex = 17;
@@ -254,7 +254,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1351, 522);
+            ClientSize = new Size(1351, 594);
             Controls.Add(label7);
             Controls.Add(btn_regenerate_Q);
             Controls.Add(btn_del_exam);
