@@ -12,8 +12,9 @@ namespace exam_app
 			// see https://aka.ms/applicationconfiguration.
 			ApplicationConfiguration.Initialize();
 			//Application.Run(new Form1());
-			//Application.Run(new StartExamForm(1,117));
+
 			Application.Run(new LoginForm());
+
 
 		}
 	}
