@@ -25,6 +25,8 @@ namespace exam_app
 
         private void CreateQuestionsForm_Load(object sender, EventArgs e)
         {
+
+        }
             DefaultStart();
             getInstructorCourses();
             cb_QuestionType.SelectedIndex = 0;

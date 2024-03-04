@@ -8,7 +8,7 @@ namespace exam_app
 		public Form1()
 		{
 			InitializeComponent();
-		
+			
 		}
 	}
 }

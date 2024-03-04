@@ -16,6 +16,10 @@ namespace exam_app
     public partial class StartExamForm : Form
     {
         // development part
+        private int std_id = 1;
+        private int exam_id = 3; 
+
+
         private int std_id;
         private int exam_id; 
         ItidbContext appContext = new ItidbContext();
