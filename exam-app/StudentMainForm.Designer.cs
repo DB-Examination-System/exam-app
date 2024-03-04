@@ -20,20 +20,41 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			this.components = new System.ComponentModel.Container();
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "StudentMainForm";
-		}
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            btn_to_avail_exams_form = new Button();
+            SuspendLayout();
+            // 
+            // btn_to_avail_exams_form
+            // 
+            btn_to_avail_exams_form.Location = new Point(318, 108);
+            btn_to_avail_exams_form.Name = "btn_to_avail_exams_form";
+            btn_to_avail_exams_form.Size = new Size(225, 30);
+            btn_to_avail_exams_form.TabIndex = 0;
+            btn_to_avail_exams_form.Text = "Show Available Exams";
+            btn_to_avail_exams_form.UseVisualStyleBackColor = true;
+            btn_to_avail_exams_form.Click += btn_to_avail_exams_form_Click;
+            // 
+            // StudentMainForm
+            // 
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(900, 472);
+            Controls.Add(btn_to_avail_exams_form);
+            Name = "StudentMainForm";
+            Text = "StudentMainForm";
+            Load += StudentMainForm_Load;
+            ResumeLayout(false);
+        }
 
-		#endregion
+        #endregion
+
+        private Button btn_to_avail_exams_form;
 	}
 }
