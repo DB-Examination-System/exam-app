@@ -1,6 +1,6 @@
 ﻿namespace exam_app
 {
-    partial class CreateQuestionsForm
+    partial class AssignCoursesToInstructor
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // CreateQuestionsForm
-            // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "CreateQuestionsForm";
-            Text = "CreateQuestionsForm";
-            Load += CreateQuestionsForm_Load;
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "AssignCoursesToInstructor";
         }
 
         #endregion

@@ -20,12 +20,12 @@
             base.Dispose(disposing);
         }
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -111,9 +111,9 @@
             PerformLayout();
         }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer1;
         private Button btn_prev;
         private Button btn_next;
         private Button button1;

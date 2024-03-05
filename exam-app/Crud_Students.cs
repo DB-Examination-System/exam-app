@@ -367,6 +367,11 @@ namespace exam_app
                     MessageBox.Show("Please enter a valid student ID.");
                 }
             }
+            else
+            {
+                MessageBox.Show("Please enter the student ID.");
+            }
+
         }
     }
 }

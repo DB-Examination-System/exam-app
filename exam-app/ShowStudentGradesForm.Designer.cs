@@ -33,6 +33,7 @@
             txt_id = new TextBox();
             dgv_studentGrades = new DataGridView();
             lbl_name = new Label();
+            lbl_id = new Label();
             ((System.ComponentModel.ISupportInitialize)dgv_studentGrades).BeginInit();
             SuspendLayout();
             // 
@@ -71,7 +72,7 @@
             // 
             // dgv_studentGrades
             // 
-            dgv_studentGrades.BackgroundColor = SystemColors.Control;
+            dgv_studentGrades.BackgroundColor = SystemColors.ControlLight;
             dgv_studentGrades.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_studentGrades.Location = new Point(121, 210);
             dgv_studentGrades.Name = "dgv_studentGrades";
@@ -89,11 +90,22 @@
             lbl_name.Size = new Size(0, 35);
             lbl_name.TabIndex = 7;
             // 
+            // lbl_id
+            // 
+            lbl_id.AutoSize = true;
+            lbl_id.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_id.ForeColor = Color.RoyalBlue;
+            lbl_id.Location = new Point(296, 128);
+            lbl_id.Name = "lbl_id";
+            lbl_id.Size = new Size(0, 38);
+            lbl_id.TabIndex = 8;
+            // 
             // ShowStudentGradesForm
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(878, 440);
+            Controls.Add(lbl_id);
             Controls.Add(lbl_name);
             Controls.Add(dgv_studentGrades);
             Controls.Add(btn_search);
@@ -101,7 +113,6 @@
             Controls.Add(txt_id);
             Name = "ShowStudentGradesForm";
             Text = "ShowStudentGradesForm";
-            Load += ShowStudentGradesForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgv_studentGrades).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -114,5 +125,6 @@
         private TextBox txt_id;
         private DataGridView dgv_studentGrades;
         private Label lbl_name;
+        private Label lbl_id;
     }
 }
