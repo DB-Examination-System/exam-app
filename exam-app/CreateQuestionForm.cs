@@ -1,4 +1,10 @@
-﻿using exam_app.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using exam_app.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -101,6 +107,8 @@ namespace exam_app
                })
                .ToList();
 
+            DGV_Crs_Questions.Columns["QId"].Visible = false;
+
             DVG_Question_Choices.DataSource = context.Questions
                 .SelectMany(Question => Question.QuestionChoices,
                         (Question, QuestionChoices) => new { Question, QuestionChoices.QChoice })
@@ -201,7 +209,6 @@ namespace exam_app
         {
             if (selectedQuestionType == "Choose")
             {
-
                 string correctanswer = "";
                 if (Cb_CorrectAnswer.SelectedIndex == 0) { correctanswer = txt_Choice1.Text; }
                 else if (Cb_CorrectAnswer.SelectedIndex == 1) { correctanswer = txt_Choice2.Text; }
@@ -212,15 +219,30 @@ namespace exam_app
                           new SqlParameter("@questionId", selectedQuestionId),
                           new SqlParameter("@quest_content", txt_QuesContent.Text),
                           new SqlParameter("@quest_type", "Choose"),
-                          new SqlParameter("@modelAns", ""),
+                          new SqlParameter("@modelAns", correctanswer),
                             new SqlParameter("@Course_id", (int)cb_Courses.SelectedValue)
                           );
+
+                context.Database.ExecuteSqlRaw("EXEC addQuestionChoices @question_id, @choice1, @choice2, @choice3, @choice4",
+                        new SqlParameter("@question_id", selectedQuestionId),
+                        new SqlParameter("@choice1", txt_Choice1.Text),
+                        new SqlParameter("@choice2", txt_Choice2.Text),
+                        new SqlParameter("@choice3", txt_Choice3.Text),
+                        new SqlParameter("@choice4", txt_Choice4.Text)
+
+                        );
             }
             else
             {
-
+                context.Database.ExecuteSqlRaw("EXEC updateQuestion @questionId, @quest_content, @quest_type, @modelAns, @Course_id",
+                         new SqlParameter("@questionId", selectedQuestionId),
+                         new SqlParameter("@quest_content", txt_QuesContent.Text),
+                         new SqlParameter("@quest_type", "TorF"),
+                         new SqlParameter("@modelAns", cb_TorF_ans.Text),
+                         new SqlParameter("@Course_id", (int)cb_Courses.SelectedValue)
+                         );
             }
-          
+
 
             MessageBox.Show("Question Updated");
             UpdateDGV();
@@ -228,7 +250,18 @@ namespace exam_app
 
         private void btn_DeleteQuestion_Click(object sender, EventArgs e)
         {
+            context.Database.ExecuteSqlRaw("EXEC deleteQuestion @questionId",
+               new SqlParameter("@questionId", selectedQuestionId));
 
+            if (selectedQuestionType == "Choose")
+            {
+                context.Database.ExecuteSqlRaw("EXEC deleteQuestionChoices @questionId",
+                   new SqlParameter("@questionId", selectedQuestionId));
+            }
+
+            MessageBox.Show("Question Deleted");
+
+            UpdateDGV();
         }
 
         int selectedQuestionId = 0;
@@ -246,7 +279,6 @@ namespace exam_app
                 if (row.Cells[0].Value != null)
                 {
                     selectedQuestionId = Convert.ToInt32(row.Cells[0].Value);
-                    MessageBox.Show("Selected Question ID: " + selectedQuestionId.ToString());
 
                     selectedQuestionType = (string)row.Cells["QType"].Value;
 
@@ -289,13 +321,13 @@ namespace exam_app
                             cb_TorF_ans.SelectedIndex = 0;
                         else
                         {
-                            cb_QuestionType.SelectedIndex = 1;
+                            cb_TorF_ans.SelectedIndex = 1;
                         }
                     }
                 }
             }
 
-            
+
         }
 
         private void DVG_Question_Choices_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
