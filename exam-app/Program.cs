@@ -14,7 +14,7 @@ namespace exam_app
 			ApplicationConfiguration.Initialize();
 			//Application.Run(new Form1());
 
-			Application.Run(new Assign_Track_StudentForm(1));
+			Application.Run(new CreateQuestionsForm(1));
 
             
 
