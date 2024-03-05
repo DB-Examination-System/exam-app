@@ -222,7 +222,7 @@ namespace exam_app
         }
         private void btn_next_Click(object sender, EventArgs e)
         {
-            if (currentQuestionPanelIndex <= questionViews.Count - 1)
+            if (currentQuestionPanelIndex < questionViews.Count - 1)
             {
                 currentQuestionPanelIndex++;
                 ShowQuestion(currentQuestionPanelIndex);
