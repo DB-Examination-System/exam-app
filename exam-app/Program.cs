@@ -12,8 +12,9 @@ namespace exam_app
 			// see https://aka.ms/applicationconfiguration.
 
 			ApplicationConfiguration.Initialize();
+			//Application.Run(new Form1());
 
-			Application.Run(new ShowStudentGradesForm());
+			Application.Run(new AssignCoursesToInstructor(5));
 
             
 
