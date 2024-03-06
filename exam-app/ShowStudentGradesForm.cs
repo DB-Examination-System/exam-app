@@ -8,34 +8,33 @@ namespace exam_app
 {
     public partial class ShowStudentGradesForm : Form
     {
-        int stid;
+        int stId;
         ItidbContext db = new ItidbContext();
 
-        public ShowStudentGradesForm()
+        public ShowStudentGradesForm(int _stId)
         {
             InitializeComponent();
+            stId = _stId;
         }
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(txt_id.Text, out stid))
-            {
-                MessageBox.Show("Please enter a valid student ID.");
-                return;
-            }
 
-            var student = db.Students.FirstOrDefault(s => s.StId == stid);
+
+        }
+
+        private void ShowStudentGradesForm_Load(object sender, EventArgs e)
+        {
+            var student = db.Students.FirstOrDefault(s => s.StId == stId);
 
             if (student != null)
             {
-                lbl_name.Text = $"{student.StFname} {student.StLname}";
-                lbl_id.Text = $"{student.StId.ToString()}. ";
-
+                label_Name.Text = $"{student.StFname} {student.StLname}";
 
                 var examGrades = (from se in db.StudentExams
                                   join ex in db.Exams on se.ExamId equals ex.ExId
                                   join c in db.Courses on ex.CourseId equals c.CrsId
-                                  where se.StudentId == stid
+                                  where se.StudentId == stId
                                   select new
                                   {
                                       ExamId = ex.ExId,
@@ -50,6 +49,14 @@ namespace exam_app
             {
                 MessageBox.Show("Student not exists.");
             }
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            var mainStdForm = new StudentMainForm(stId);
+            Hide();
+            mainStdForm.ShowDialog();
+            Close();
         }
     }
 }

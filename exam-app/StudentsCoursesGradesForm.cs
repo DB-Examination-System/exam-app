@@ -79,11 +79,11 @@ namespace exam_app
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            //Switch to Assign Track, number just for test
+            InstructorMainForm inst_Mainform = new InstructorMainForm(Ins_id);
+
             this.Hide();
-            //InstructorMainForm inst_Mainform = new InstructorMainForm(Ins_id);
-            //inst_Mainform.FormClosed += (s, args) => this.Close();
-            //inst_Mainform.Show();
+            inst_Mainform.ShowDialog();
+            this.Close();
         }
     }
 }

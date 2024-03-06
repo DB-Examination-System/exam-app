@@ -57,13 +57,19 @@ namespace exam_app
 
 		private void btn_start_exam_Click(object sender, EventArgs e)
 		{
-            MessageBox.Show("selected exam id " + selectedExam + " std id = " + currStdId);
-            Hide();
-            StartExamForm form = new StartExamForm(currStdId, selectedExam);
-            form.ShowDialog();
-            this.Close();
-
-
+			var stExam = ItidbContext.StudentExams.FirstOrDefault(c => c.StudentId == currStdId && c.ExamId==selectedExam);
+			var stExQ = ItidbContext.ExamStdQuestions.FirstOrDefault(e => e.ExId == selectedExam && e.StId == currStdId);
+			if(stExam != null || stExQ!=null)
+			{
+				MessageBox.Show("you already answered this exam before");
+			}
+			else
+			{
+                Hide();
+                StartExamForm form = new StartExamForm(currStdId, selectedExam);
+                form.ShowDialog();
+                this.Close();
+            }
         }
 
 		private void dgv_exams_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)

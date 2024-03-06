@@ -41,21 +41,32 @@ namespace exam_app
                     Debug.WriteLine(user.Role);
                     if (user.Password == txt_password.Text && user.Role != null)
                     {
-                        MessageBox.Show(user.Role);
+
                         if (user.Role.ToLower().Trim() == "student")
                         {
-                            int currStdId = iticontext.Students.FirstOrDefault(u => u.UserId == user.UserId).StId;
-                            Hide();
-                            StudentMainForm studentMainForm = new StudentMainForm(currStdId);
-                            studentMainForm.ShowDialog();
-                            this.Close();
+                            var currStd = iticontext.Students.FirstOrDefault(u => u.UserId == user.UserId);
+                            if (currStd != null)
+                            {
+                                int currStdId = currStd.StId;
+                                Hide();
+                                StudentMainForm studentMainForm = new StudentMainForm(currStdId);
+                                studentMainForm.ShowDialog();
+                                Close();
+                            }
+
                         }
                         else if (user.Role.Trim() == "instructor")
                         {
-                            //Hide();
-                            //InstructorMainForm instructorMainForm = new InstructorMainForm();
-                            //instructorMainForm.ShowDialog();
-                            //this.Close();
+                            var currIns = iticontext.Instructors.FirstOrDefault(u => u.UserId == user.UserId);
+                            if (currIns != null)
+                            {
+                                int currInsId = currIns.InsId;
+                                Hide();
+                                InstructorMainForm instructorMainForm = new InstructorMainForm(currInsId);
+                                instructorMainForm.ShowDialog();
+                                this.Close();
+                            }
+
                         }
                         else if (user.Role.Trim() == "admin")
                         {
@@ -77,7 +88,7 @@ namespace exam_app
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

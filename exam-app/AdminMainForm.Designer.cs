@@ -20,20 +20,123 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			this.components = new System.ComponentModel.Container();
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Text = "AdminMainForm";
-		}
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            btn_student_management = new Button();
+            btn_assignTrack = new Button();
+            btn_ins_Management = new Button();
+            btn_assign_courses_ins = new Button();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(31, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(337, 50);
+            label1.TabIndex = 0;
+            label1.Text = "Admin Dashboard";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(31, 97);
+            label2.Name = "label2";
+            label2.Size = new Size(1180, 28);
+            label2.TabIndex = 0;
+            label2.Text = "--------------------------------------------------------------------------------------------------------------------------------------------------";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(31, 175);
+            label3.Name = "label3";
+            label3.Size = new Size(115, 38);
+            label3.TabIndex = 0;
+            label3.Text = "Student";
+            // 
+            // btn_student_management
+            // 
+            btn_student_management.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btn_student_management.Location = new Point(31, 243);
+            btn_student_management.Name = "btn_student_management";
+            btn_student_management.Size = new Size(287, 61);
+            btn_student_management.TabIndex = 1;
+            btn_student_management.Text = "Student Management";
+            btn_student_management.UseVisualStyleBackColor = true;
+            btn_student_management.Click += btn_student_management_Click;
+            // 
+            // btn_assignTrack
+            // 
+            btn_assignTrack.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btn_assignTrack.Location = new Point(31, 325);
+            btn_assignTrack.Name = "btn_assignTrack";
+            btn_assignTrack.Size = new Size(287, 61);
+            btn_assignTrack.TabIndex = 1;
+            btn_assignTrack.Text = "Assign Track To Student";
+            btn_assignTrack.UseVisualStyleBackColor = true;
+            btn_assignTrack.Click += btn_assignTrack_Click;
+            // 
+            // btn_ins_Management
+            // 
+            btn_ins_Management.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btn_ins_Management.Location = new Point(417, 243);
+            btn_ins_Management.Name = "btn_ins_Management";
+            btn_ins_Management.Size = new Size(287, 61);
+            btn_ins_Management.TabIndex = 1;
+            btn_ins_Management.Text = "Instructor Management";
+            btn_ins_Management.UseVisualStyleBackColor = true;
+            btn_ins_Management.Click += btn_ins_Management_Click;
+            // 
+            // btn_assign_courses_ins
+            // 
+            btn_assign_courses_ins.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            btn_assign_courses_ins.Location = new Point(417, 325);
+            btn_assign_courses_ins.Name = "btn_assign_courses_ins";
+            btn_assign_courses_ins.Size = new Size(287, 61);
+            btn_assign_courses_ins.TabIndex = 1;
+            btn_assign_courses_ins.Text = "Instrucors Courses";
+            btn_assign_courses_ins.UseVisualStyleBackColor = true;
+            btn_assign_courses_ins.Click += btn_assign_courses_ins_Click;
+            // 
+            // AdminMainForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1234, 656);
+            Controls.Add(btn_assignTrack);
+            Controls.Add(btn_assign_courses_ins);
+            Controls.Add(btn_ins_Management);
+            Controls.Add(btn_student_management);
+            Controls.Add(label2);
+            Controls.Add(label3);
+            Controls.Add(label1);
+            Name = "AdminMainForm";
+            Text = "AdminMainForm";
+            ResumeLayout(false);
+            PerformLayout();
+        }
 
-		#endregion
-	}
+        #endregion
+
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Button btn_student_management;
+        private Button btn_assignTrack;
+        private Button btn_ins_Management;
+        private Button btn_assign_courses_ins;
+    }
 }

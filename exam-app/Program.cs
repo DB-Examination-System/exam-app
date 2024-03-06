@@ -14,7 +14,7 @@ namespace exam_app
 			ApplicationConfiguration.Initialize();
 			//Application.Run(new Form1());
 
-			Application.Run(new AssignCoursesToInstructor(5));
+			Application.Run(new LoginForm());
 
             
 

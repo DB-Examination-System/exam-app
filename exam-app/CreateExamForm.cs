@@ -20,15 +20,16 @@ namespace exam_app
     public partial class CreateExamForm : Form
     {
 
-        int instructor_id = 1; // this is from prevoius form
+        int instructor_id ; // this is from prevoius form
 
         ItidbContext appContext = new ItidbContext();
         List<object> examDataList = new List<object>();
         List<createdExam> createdExams = new List<createdExam>();
         int selectedExamId;
-        public CreateExamForm()
+        public CreateExamForm(int _insId)
         {
             InitializeComponent();
+            instructor_id = _insId;
         }
 
         private void CreateExamForm_Load(object sender, EventArgs e)
@@ -108,7 +109,7 @@ namespace exam_app
                     else
                         MessageBox.Show("there is not enough questions \n exam is not created", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    
+
                 }
                 else
                 {
@@ -220,13 +221,13 @@ namespace exam_app
 
         private void btn_regenerate_Q_Click(object sender, EventArgs e)
         {
-            if (cmb_noChooseQ.SelectedIndex == -1 || cmb_noOfTFQ.SelectedIndex == -1 || cmb_ins_courses.SelectedIndex == -1 || lst_createdExam.Items.Count==0)
+            if (cmb_noChooseQ.SelectedIndex == -1 || cmb_noOfTFQ.SelectedIndex == -1 || cmb_ins_courses.SelectedIndex == -1 || lst_createdExam.Items.Count == 0)
             {
                 MessageBox.Show("select  exam first");
             }
             else
             {
-               if(int.Parse(cmb_noChooseQ.Text) + int.Parse(cmb_noOfTFQ.Text) == 10)
+                if (int.Parse(cmb_noChooseQ.Text) + int.Parse(cmb_noOfTFQ.Text) == 10)
                 {
                     if (isQuestionsAvailable())
                     {
@@ -259,10 +260,10 @@ namespace exam_app
                 }
                 else
                 {
-                   MessageBox.Show("number of exam questions should be 10", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    MessageBox.Show("number of exam questions should be 10", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 }
 
-              
+
             }
 
         }
@@ -270,7 +271,7 @@ namespace exam_app
         private void btn_del_exam_Click(object sender, EventArgs e)
         {
 
-            if (createdExams.Count() > 0 && txt_exam_name.Text !="" && lst_createdExam.SelectedItems.Count > 0)
+            if (createdExams.Count() > 0 && txt_exam_name.Text != "" && lst_createdExam.SelectedItems.Count > 0)
             {
 
                 DialogResult dialog = MessageBox.Show($"exam {txt_exam_name.Text} will be deleted \n are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -289,42 +290,50 @@ namespace exam_app
                         appContext.Exams.Remove(s);
                         appContext.SaveChanges();
                     }
-                        for (int i = lst_createdExam.Items.Count - 1; i >= 0; i--)
+                    for (int i = lst_createdExam.Items.Count - 1; i >= 0; i--)
+                    {
+                        if (lst_createdExam.Items[i].Text == txt_exam_name.Text)
                         {
-                            if (lst_createdExam.Items[i].Text == txt_exam_name.Text)
-                            {
-                                // Remove the item from the ListView
-                                lst_createdExam.Items.RemoveAt(i);
-                                createdExams.RemoveAt(i);
-                                break;
-                            }
+                            // Remove the item from the ListView
+                            lst_createdExam.Items.RemoveAt(i);
+                            createdExams.RemoveAt(i);
+                            break;
                         }
+                    }
                     DGV_exam_question.DataSource = null;
                     clear();
 
                 }
-                    
+
             }
             else
             {
                 MessageBox.Show("select exam first");
             }
         }
-    
+
         private bool isQuestionsAvailable()
         {
             int numOfTFReqQues = int.Parse(cmb_noOfTFQ.Text);
             int numOfChooseqQues = int.Parse(cmb_noChooseQ.Text);
             int courseID = (int)cmb_ins_courses.SelectedValue;
 
-            int numOfTFReqAvail =  appContext.Questions.Where(q => q.CourseId ==courseID &&  q.QType == "TorF").Count();
-            int numOfChooseReqAvail =  appContext.Questions.Where(q => q.CourseId == courseID &&  q.QType == "Choose").Count();
+            int numOfTFReqAvail = appContext.Questions.Where(q => q.CourseId == courseID && q.QType == "TorF").Count();
+            int numOfChooseReqAvail = appContext.Questions.Where(q => q.CourseId == courseID && q.QType == "Choose").Count();
 
             if (numOfTFReqAvail >= numOfTFReqQues && numOfChooseReqAvail >= numOfChooseqQues)
                 return true;
 
             return false;
 
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            InstructorMainForm insMainForm = new InstructorMainForm(instructor_id);
+            Hide();
+            insMainForm.ShowDialog();
+            Close();
         }
     }
 
