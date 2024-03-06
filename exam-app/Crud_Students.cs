@@ -100,10 +100,13 @@ namespace exam_app
             //reset datePicker
             birthdate_picker.Value = DateTime.Today;
             //Switch to Assign Track
-            this.Hide();
+            //this.Hide();
+            //Assign_Track_StudentForm assign_form = new Assign_Track_StudentForm(recentlyAdded_StdID);
+            //assign_form.FormClosed += (s, args) => this.Close();
+            //assign_form.Show();
+
             Assign_Track_StudentForm assign_form = new Assign_Track_StudentForm(recentlyAdded_StdID);
-            assign_form.FormClosed += (s, args) => this.Close();
-            assign_form.Show();
+            assign_form.ShowDialog();
 
         }
         #endregion add student
@@ -143,7 +146,7 @@ namespace exam_app
             if (!int.TryParse(std_id_txt.Text, out std_id))
             {
                 MessageBox.Show("Please enter a valid student ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
 
             var student = context.Students.FirstOrDefault(u => u.StId == std_id);
@@ -157,7 +160,7 @@ namespace exam_app
             if (userId == null)
             {
                 MessageBox.Show("User ID associated with the student is null.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
 
             var loginAccount = context.LoginAccounts.FirstOrDefault(l => l.UserId == userId);
@@ -165,7 +168,7 @@ namespace exam_app
             if (loginAccount == null)
             {
                 MessageBox.Show("Login account not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return; 
+                return;
             }
 
             // Populate fields with data from the login account
@@ -372,6 +375,14 @@ namespace exam_app
                 MessageBox.Show("Please enter the student ID.");
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AdminMainForm admin = new AdminMainForm();
+            Hide();
+            admin.ShowDialog();
+            Close();
         }
     }
 }

@@ -335,5 +335,13 @@ namespace exam_app
             btn_UpdateQuestion.Visible = true;
             btn_DeleteQuestion.Visible = true;
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            InstructorMainForm insMainForm = new InstructorMainForm(Ins_id);
+            Hide();
+            insMainForm.ShowDialog();
+            Close();
+        }
     }
 }
