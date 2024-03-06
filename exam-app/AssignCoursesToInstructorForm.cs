@@ -14,18 +14,22 @@ namespace exam_app
 {
     public partial class AssignCoursesToInstructor : Form
     {
-        ItidbContext context;
+        ItidbContext context=new ItidbContext();
         int Ins_id;
 
-        public AssignCoursesToInstructor(int ins_id)
+        public AssignCoursesToInstructor()
         {
             InitializeComponent();
-            Ins_id = ins_id;
-            context = new ItidbContext();
+            //Ins_id = instructorId;
         }
 
         private void AssignCoursesToInstructor_Load(object sender, EventArgs e)
         {
+            //display instructors in dgv_Instructors
+            var allInstructors = context.Instructors.ToList();
+            dgv_Instructors.DataSource = allInstructors;
+
+
             var branches = context.Branches.ToList();
 
             cb_branch.DataSource = branches;
@@ -55,13 +59,20 @@ namespace exam_app
 
             if (selectedBranch != null)
             {
-                var branchTracks = selectedBranch.Tracks.ToList();
+                var branchTracks = selectedBranch.Tracks?.ToList();
 
                 cb_track.DisplayMember = "TrName";
                 cb_track.ValueMember = "TrId";
                 cb_track.DataSource = branchTracks;
                 cb_track.SelectedValue = -1;
             }
+            else
+            {
+                // Handle the case where selectedBranch is null
+                MessageBox.Show("Invalid branch selection.");
+                cb_track.DataSource = null;
+            }
+
             cb_track.SelectedIndexChanged += cb_branch_Selected_Track;
         }
 
@@ -74,23 +85,16 @@ namespace exam_app
 
             if (selectedTrack != null)
             {
-                if (selectedTrack.Crs != null)
-                {
-                    var trackCourses = selectedTrack.Crs.ToList();
+                var trackCourses = selectedTrack.Crs?.ToList();
 
-                    cb_course.DisplayMember = "CrsName";
-                    cb_course.ValueMember = "CrsId";
-                    cb_course.DataSource = trackCourses;
-                    cb_course.SelectedValue = -1;
-                }
-                else
-                {
-                    MessageBox.Show("No courses available for the selected track.");
-                    cb_course.DataSource = null;
-                }
+                cb_course.DisplayMember = "CrsName";
+                cb_course.ValueMember = "CrsId";
+                cb_course.DataSource = trackCourses;
+                cb_course.SelectedValue = -1;
             }
             else
             {
+                // Handle the case where selectedTrack is null
                 MessageBox.Show("Invalid track selection.");
                 cb_course.DataSource = null;
             }
@@ -143,6 +147,24 @@ namespace exam_app
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+        private void dgv_Instructors_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.RowIndex < dgv_Instructors.Rows.Count)
+            {
+                // Fetch instructor ID from the selected row
+                Ins_id = (int)dgv_Instructors.Rows[e.RowIndex].Cells["InsId"].Value;
+
+                // Display instructor name in the label
+                var instructor = context.Instructors.Find(Ins_id);
+                if (instructor != null)
+                {
+                    string firstName = instructor.InsFname.Trim();
+                    string lastName = instructor.InsLname.Trim();
+
+                    lbl_insName.Text = $"Instructor Name: {firstName} {lastName}";
+                }
             }
         }
     }
