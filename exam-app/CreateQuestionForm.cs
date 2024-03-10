@@ -48,7 +48,7 @@ namespace exam_app
             cb_Courses.DisplayMember = "CrsName";
             cb_Courses.ValueMember = "CrsId";
             cb_Courses.DataSource = instructorCourses.ToList();
-            cb_Courses.SelectedIndex = -1;
+            cb_Courses.SelectedIndex = 0;
         }
 
         void DefaultStart()
@@ -119,7 +119,7 @@ namespace exam_app
 
         private void cb_Courses_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cb_Courses.SelectedIndex != -1)
+            if (cb_Courses.SelectedIndex !=0 )
             {
                 UpdateDGV();
             }
