@@ -37,7 +37,7 @@ namespace exam_app
 
         private void btn_assign_courses_ins_Click(object sender, EventArgs e)
         {
-            var crs = new AssignCoursesToInstructor(1);
+            var crs = new AssignCoursesToInstructor();
             crs.ShowDialog();
         }
     }

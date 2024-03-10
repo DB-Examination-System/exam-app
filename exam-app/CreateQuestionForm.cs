@@ -223,7 +223,7 @@ namespace exam_app
                             new SqlParameter("@Course_id", (int)cb_Courses.SelectedValue)
                           );
 
-                context.Database.ExecuteSqlRaw("EXEC addQuestionChoices @question_id, @choice1, @choice2, @choice3, @choice4",
+                context.Database.ExecuteSqlRaw("EXEC UpdateQuestionChoices @question_id, @choice1, @choice2, @choice3, @choice4",
                         new SqlParameter("@question_id", selectedQuestionId),
                         new SqlParameter("@choice1", txt_Choice1.Text),
                         new SqlParameter("@choice2", txt_Choice2.Text),
