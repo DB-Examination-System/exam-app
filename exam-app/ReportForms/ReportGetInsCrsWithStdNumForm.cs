@@ -1,6 +1,7 @@
 ﻿using exam_app.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Reporting.WinForms;
+using exam_app.HelperClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using exam_app.DataSets;
 
 namespace exam_app
 {
@@ -59,8 +61,7 @@ namespace exam_app
                 try
                 {
 
-                    string projectFolderPath = GetProjectFolderPath();
-                    string reportFilePath = projectFolderPath + "\\Reports\\getInsCrsWithStdNum.rdlc";
+                    string reportFilePath = FileClass.GetProjectFolderPath() + "\\Reports\\getInsCrsWithStdNum.rdlc";
 
                     reportViewer1.LocalReport.DataSources.Clear();
                     reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", _dataSet.Tables["GetInsCrsWithStdCount"]));
@@ -77,27 +78,6 @@ namespace exam_app
 
         }
 
-        string GetProjectFolderPath()
-        {
-            // Get the directory where the executable is located
-            string executablePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string executableDirectory = Path.GetDirectoryName(executablePath);
-
-            // Traverse up the directory tree until the project folder is found
-            DirectoryInfo directory = new DirectoryInfo(executableDirectory);
-            while (directory != null)
-            {
-                FileInfo[] projectFiles = directory.GetFiles("*.csproj");
-                if (projectFiles.Length > 0)
-                {
-                    return directory.FullName;
-                }
-
-                directory = directory.Parent;
-            }
-
-            return null;
-        }
     }
 
     public class CrsStdNum

@@ -25,17 +25,32 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CrsTopic.Designer.cs">
+    <Compile Update="DataSets\CrsTopic.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>CrsTopic.xsd</DependentUpon>
     </Compile>
-    <Compile Update="GetExamDetailsForSTD.Designer.cs">
+    <Compile Update="DataSets\GetExamDetails.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GetExamDetails.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\GetStudentExamsAndGrades.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GetStudentExamsAndGrades.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\StudentsInfoPerTrack.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StudentsInfoPerTrack.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\GetExamDetailsForSTD.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>GetExamDetailsForSTD.xsd</DependentUpon>
     </Compile>
-    <Compile Update="InsCrsStdNum.Designer.cs">
+    <Compile Update="DataSets\InsCrsStdNum.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>InsCrsStdNum.xsd</DependentUpon>
@@ -55,15 +70,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="CrsTopic.xsd">
+    <None Update="DataSets\CrsTopic.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>CrsTopic.Designer.cs</LastGenOutput>
     </None>
-    <None Update="GetExamDetailsForSTD.xsd">
+    <None Update="DataSets\GetExamDetails.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetExamDetails.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\GetStudentExamsAndGrades.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetStudentExamsAndGrades.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\StudentsInfoPerTrack.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentsInfoPerTrack.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\GetExamDetailsForSTD.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>GetExamDetailsForSTD.Designer.cs</LastGenOutput>
     </None>
-    <None Update="InsCrsStdNum.xsd">
+    <None Update="DataSets\InsCrsStdNum.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>InsCrsStdNum.Designer.cs</LastGenOutput>
     </None>

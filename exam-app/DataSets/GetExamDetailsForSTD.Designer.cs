@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace exam_app {
+namespace exam_app.DataSets {
     
     
     /// <summary>
@@ -636,7 +636,7 @@ namespace exam_app {
         }
     }
 }
-namespace exam_app.GetExamDetailsForSTDTableAdapters {
+namespace exam_app.DataSets.GetExamDetailsForSTDTableAdapters {
     
     
     /// <summary>

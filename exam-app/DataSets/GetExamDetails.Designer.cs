@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace exam_app {
+namespace exam_app.DataSets {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace exam_app {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("CrsTopic")]
+    [global::System.Xml.Serialization.XmlRootAttribute("GetExamDetails")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class CrsTopic : global::System.Data.DataSet {
+    public partial class GetExamDetails : global::System.Data.DataSet {
         
-        private GetTopicsForCourseDataTable tableGetTopicsForCourse;
+        private GetExamDetailsDataTable tableGetExamDetails;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public CrsTopic() {
+        public GetExamDetails() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace exam_app {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected CrsTopic(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected GetExamDetails(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace exam_app {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["GetTopicsForCourse"] != null)) {
-                    base.Tables.Add(new GetTopicsForCourseDataTable(ds.Tables["GetTopicsForCourse"]));
+                if ((ds.Tables["GetExamDetails"] != null)) {
+                    base.Tables.Add(new GetExamDetailsDataTable(ds.Tables["GetExamDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace exam_app {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GetTopicsForCourseDataTable GetTopicsForCourse {
+        public GetExamDetailsDataTable _GetExamDetails {
             get {
-                return this.tableGetTopicsForCourse;
+                return this.tableGetExamDetails;
             }
         }
         
@@ -127,7 +127,7 @@ namespace exam_app {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            CrsTopic cln = ((CrsTopic)(base.Clone()));
+            GetExamDetails cln = ((GetExamDetails)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace exam_app {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["GetTopicsForCourse"] != null)) {
-                    base.Tables.Add(new GetTopicsForCourseDataTable(ds.Tables["GetTopicsForCourse"]));
+                if ((ds.Tables["GetExamDetails"] != null)) {
+                    base.Tables.Add(new GetExamDetailsDataTable(ds.Tables["GetExamDetails"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace exam_app {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableGetTopicsForCourse = ((GetTopicsForCourseDataTable)(base.Tables["GetTopicsForCourse"]));
+            this.tableGetExamDetails = ((GetExamDetailsDataTable)(base.Tables["GetExamDetails"]));
             if ((initTable == true)) {
-                if ((this.tableGetTopicsForCourse != null)) {
-                    this.tableGetTopicsForCourse.InitVars();
+                if ((this.tableGetExamDetails != null)) {
+                    this.tableGetExamDetails.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace exam_app {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "CrsTopic";
+            this.DataSetName = "GetExamDetails";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/CrsTopic.xsd";
+            this.Namespace = "http://tempuri.org/GetExamDetails.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableGetTopicsForCourse = new GetTopicsForCourseDataTable();
-            base.Tables.Add(this.tableGetTopicsForCourse);
+            this.tableGetExamDetails = new GetExamDetailsDataTable();
+            base.Tables.Add(this.tableGetExamDetails);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeGetTopicsForCourse() {
+        private bool ShouldSerialize_GetExamDetails() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace exam_app {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            CrsTopic ds = new CrsTopic();
+            GetExamDetails ds = new GetExamDetails();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,21 +270,27 @@ namespace exam_app {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void GetTopicsForCourseRowChangeEventHandler(object sender, GetTopicsForCourseRowChangeEvent e);
+        public delegate void GetExamDetailsRowChangeEventHandler(object sender, GetExamDetailsRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GetTopicsForCourseDataTable : global::System.Data.TypedTableBase<GetTopicsForCourseRow> {
+        public partial class GetExamDetailsDataTable : global::System.Data.TypedTableBase<GetExamDetailsRow> {
             
-            private global::System.Data.DataColumn columnTopic_name;
+            private global::System.Data.DataColumn columnExam_Name;
+            
+            private global::System.Data.DataColumn columnQuestion_ID;
+            
+            private global::System.Data.DataColumn columnQuestion_Content;
+            
+            private global::System.Data.DataColumn columnQuestion_Choice;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetTopicsForCourseDataTable() {
-                this.TableName = "GetTopicsForCourse";
+            public GetExamDetailsDataTable() {
+                this.TableName = "GetExamDetails";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -292,7 +298,7 @@ namespace exam_app {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal GetTopicsForCourseDataTable(global::System.Data.DataTable table) {
+            internal GetExamDetailsDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -309,16 +315,40 @@ namespace exam_app {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected GetTopicsForCourseDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GetExamDetailsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Topic_nameColumn {
+            public global::System.Data.DataColumn Exam_NameColumn {
                 get {
-                    return this.columnTopic_name;
+                    return this.columnExam_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Question_IDColumn {
+                get {
+                    return this.columnQuestion_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Question_ContentColumn {
+                get {
+                    return this.columnQuestion_Content;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Question_ChoiceColumn {
+                get {
+                    return this.columnQuestion_Choice;
                 }
             }
             
@@ -333,45 +363,48 @@ namespace exam_app {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetTopicsForCourseRow this[int index] {
+            public GetExamDetailsRow this[int index] {
                 get {
-                    return ((GetTopicsForCourseRow)(this.Rows[index]));
+                    return ((GetExamDetailsRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GetTopicsForCourseRowChangeEventHandler GetTopicsForCourseRowChanging;
+            public event GetExamDetailsRowChangeEventHandler GetExamDetailsRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GetTopicsForCourseRowChangeEventHandler GetTopicsForCourseRowChanged;
+            public event GetExamDetailsRowChangeEventHandler GetExamDetailsRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GetTopicsForCourseRowChangeEventHandler GetTopicsForCourseRowDeleting;
+            public event GetExamDetailsRowChangeEventHandler GetExamDetailsRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GetTopicsForCourseRowChangeEventHandler GetTopicsForCourseRowDeleted;
+            public event GetExamDetailsRowChangeEventHandler GetExamDetailsRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddGetTopicsForCourseRow(GetTopicsForCourseRow row) {
+            public void AddGetExamDetailsRow(GetExamDetailsRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetTopicsForCourseRow AddGetTopicsForCourseRow(string Topic_name) {
-                GetTopicsForCourseRow rowGetTopicsForCourseRow = ((GetTopicsForCourseRow)(this.NewRow()));
+            public GetExamDetailsRow AddGetExamDetailsRow(string Exam_Name, string Question_Content, string Question_Choice) {
+                GetExamDetailsRow rowGetExamDetailsRow = ((GetExamDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Topic_name};
-                rowGetTopicsForCourseRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGetTopicsForCourseRow);
-                return rowGetTopicsForCourseRow;
+                        Exam_Name,
+                        null,
+                        Question_Content,
+                        Question_Choice};
+                rowGetExamDetailsRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGetExamDetailsRow);
+                return rowGetExamDetailsRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GetTopicsForCourseDataTable cln = ((GetTopicsForCourseDataTable)(base.Clone()));
+                GetExamDetailsDataTable cln = ((GetExamDetailsDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -379,48 +412,67 @@ namespace exam_app {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GetTopicsForCourseDataTable();
+                return new GetExamDetailsDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnTopic_name = base.Columns["Topic_name"];
+                this.columnExam_Name = base.Columns["Exam_Name"];
+                this.columnQuestion_ID = base.Columns["Question_ID"];
+                this.columnQuestion_Content = base.Columns["Question_Content"];
+                this.columnQuestion_Choice = base.Columns["Question_Choice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnTopic_name = new global::System.Data.DataColumn("Topic_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTopic_name);
-                this.columnTopic_name.AllowDBNull = false;
-                this.columnTopic_name.MaxLength = 50;
+                this.columnExam_Name = new global::System.Data.DataColumn("Exam_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExam_Name);
+                this.columnQuestion_ID = new global::System.Data.DataColumn("Question_ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuestion_ID);
+                this.columnQuestion_Content = new global::System.Data.DataColumn("Question_Content", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuestion_Content);
+                this.columnQuestion_Choice = new global::System.Data.DataColumn("Question_Choice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuestion_Choice);
+                this.columnExam_Name.MaxLength = 10;
+                this.columnQuestion_ID.AutoIncrement = true;
+                this.columnQuestion_ID.AutoIncrementSeed = -1;
+                this.columnQuestion_ID.AutoIncrementStep = -1;
+                this.columnQuestion_ID.AllowDBNull = false;
+                this.columnQuestion_ID.ReadOnly = true;
+                this.columnQuestion_Content.AllowDBNull = false;
+                this.columnQuestion_Content.MaxLength = 2147483647;
+                this.columnQuestion_Choice.AllowDBNull = false;
+                this.columnQuestion_Choice.MaxLength = 50;
+                this.ExtendedProperties.Add("Generator_TablePropName", "_GetExamDetails");
+                this.ExtendedProperties.Add("Generator_UserTableName", "GetExamDetails");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetTopicsForCourseRow NewGetTopicsForCourseRow() {
-                return ((GetTopicsForCourseRow)(this.NewRow()));
+            public GetExamDetailsRow NewGetExamDetailsRow() {
+                return ((GetExamDetailsRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GetTopicsForCourseRow(builder);
+                return new GetExamDetailsRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GetTopicsForCourseRow);
+                return typeof(GetExamDetailsRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GetTopicsForCourseRowChanged != null)) {
-                    this.GetTopicsForCourseRowChanged(this, new GetTopicsForCourseRowChangeEvent(((GetTopicsForCourseRow)(e.Row)), e.Action));
+                if ((this.GetExamDetailsRowChanged != null)) {
+                    this.GetExamDetailsRowChanged(this, new GetExamDetailsRowChangeEvent(((GetExamDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -428,8 +480,8 @@ namespace exam_app {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GetTopicsForCourseRowChanging != null)) {
-                    this.GetTopicsForCourseRowChanging(this, new GetTopicsForCourseRowChangeEvent(((GetTopicsForCourseRow)(e.Row)), e.Action));
+                if ((this.GetExamDetailsRowChanging != null)) {
+                    this.GetExamDetailsRowChanging(this, new GetExamDetailsRowChangeEvent(((GetExamDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -437,8 +489,8 @@ namespace exam_app {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GetTopicsForCourseRowDeleted != null)) {
-                    this.GetTopicsForCourseRowDeleted(this, new GetTopicsForCourseRowChangeEvent(((GetTopicsForCourseRow)(e.Row)), e.Action));
+                if ((this.GetExamDetailsRowDeleted != null)) {
+                    this.GetExamDetailsRowDeleted(this, new GetExamDetailsRowChangeEvent(((GetExamDetailsRow)(e.Row)), e.Action));
                 }
             }
             
@@ -446,14 +498,14 @@ namespace exam_app {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GetTopicsForCourseRowDeleting != null)) {
-                    this.GetTopicsForCourseRowDeleting(this, new GetTopicsForCourseRowChangeEvent(((GetTopicsForCourseRow)(e.Row)), e.Action));
+                if ((this.GetExamDetailsRowDeleting != null)) {
+                    this.GetExamDetailsRowDeleting(this, new GetExamDetailsRowChangeEvent(((GetExamDetailsRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveGetTopicsForCourseRow(GetTopicsForCourseRow row) {
+            public void RemoveGetExamDetailsRow(GetExamDetailsRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -462,7 +514,7 @@ namespace exam_app {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CrsTopic ds = new CrsTopic();
+                GetExamDetails ds = new GetExamDetails();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -480,7 +532,7 @@ namespace exam_app {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GetTopicsForCourseDataTable";
+                attribute2.FixedValue = "GetExamDetailsDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -524,26 +576,76 @@ namespace exam_app {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GetTopicsForCourseRow : global::System.Data.DataRow {
+        public partial class GetExamDetailsRow : global::System.Data.DataRow {
             
-            private GetTopicsForCourseDataTable tableGetTopicsForCourse;
+            private GetExamDetailsDataTable tableGetExamDetails;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal GetTopicsForCourseRow(global::System.Data.DataRowBuilder rb) : 
+            internal GetExamDetailsRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGetTopicsForCourse = ((GetTopicsForCourseDataTable)(this.Table));
+                this.tableGetExamDetails = ((GetExamDetailsDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Topic_name {
+            public string Exam_Name {
                 get {
-                    return ((string)(this[this.tableGetTopicsForCourse.Topic_nameColumn]));
+                    try {
+                        return ((string)(this[this.tableGetExamDetails.Exam_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Exam_Name\' in table \'GetExamDetails\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableGetTopicsForCourse.Topic_nameColumn] = value;
+                    this[this.tableGetExamDetails.Exam_NameColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Question_ID {
+                get {
+                    return ((int)(this[this.tableGetExamDetails.Question_IDColumn]));
+                }
+                set {
+                    this[this.tableGetExamDetails.Question_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Question_Content {
+                get {
+                    return ((string)(this[this.tableGetExamDetails.Question_ContentColumn]));
+                }
+                set {
+                    this[this.tableGetExamDetails.Question_ContentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Question_Choice {
+                get {
+                    return ((string)(this[this.tableGetExamDetails.Question_ChoiceColumn]));
+                }
+                set {
+                    this[this.tableGetExamDetails.Question_ChoiceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExam_NameNull() {
+                return this.IsNull(this.tableGetExamDetails.Exam_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExam_NameNull() {
+                this[this.tableGetExamDetails.Exam_NameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -551,22 +653,22 @@ namespace exam_app {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class GetTopicsForCourseRowChangeEvent : global::System.EventArgs {
+        public class GetExamDetailsRowChangeEvent : global::System.EventArgs {
             
-            private GetTopicsForCourseRow eventRow;
+            private GetExamDetailsRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetTopicsForCourseRowChangeEvent(GetTopicsForCourseRow row, global::System.Data.DataRowAction action) {
+            public GetExamDetailsRowChangeEvent(GetExamDetailsRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetTopicsForCourseRow Row {
+            public GetExamDetailsRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -582,7 +684,7 @@ namespace exam_app {
         }
     }
 }
-namespace exam_app.CrsTopicTableAdapters {
+namespace exam_app.DataSets.GetExamDetailsTableAdapters {
     
     
     /// <summary>
@@ -594,7 +696,7 @@ namespace exam_app.CrsTopicTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GetTopicsForCourseTableAdapter : global::System.ComponentModel.Component {
+    public partial class GetExamDetailsTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -608,7 +710,7 @@ namespace exam_app.CrsTopicTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public GetTopicsForCourseTableAdapter() {
+        public GetExamDetailsTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -705,8 +807,11 @@ namespace exam_app.CrsTopicTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "GetTopicsForCourse";
-            tableMapping.ColumnMappings.Add("Topic_name", "Topic_name");
+            tableMapping.DataSetTable = "GetExamDetails";
+            tableMapping.ColumnMappings.Add("Exam_Name", "Exam_Name");
+            tableMapping.ColumnMappings.Add("Question_ID", "Question_ID");
+            tableMapping.ColumnMappings.Add("Question_Content", "Question_Content");
+            tableMapping.ColumnMappings.Add("Question_Choice", "Question_Choice");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -714,8 +819,8 @@ namespace exam_app.CrsTopicTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=.;Initial Catalog=ITIDB;Integrated Security=True;TrustServerCertifica" +
-                "te=True";
+            this._connection.ConnectionString = "Data Source=.;Initial Catalog=ITIDB;Integrated Security=True;Encrypt=True;TrustSe" +
+                "rverCertificate=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -724,20 +829,20 @@ namespace exam_app.CrsTopicTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.GetTopicsForCourse";
+            this._commandCollection[0].CommandText = "dbo.GetExamDetails";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Crs_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@exam_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CrsTopic.GetTopicsForCourseDataTable dataTable, global::System.Nullable<int> Crs_id) {
+        public virtual int Fill(GetExamDetails.GetExamDetailsDataTable dataTable, global::System.Nullable<int> exam_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((Crs_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Crs_id.Value));
+            if ((exam_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(exam_id.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -753,15 +858,15 @@ namespace exam_app.CrsTopicTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CrsTopic.GetTopicsForCourseDataTable GetData(global::System.Nullable<int> Crs_id) {
+        public virtual GetExamDetails.GetExamDetailsDataTable GetData(global::System.Nullable<int> exam_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((Crs_id.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Crs_id.Value));
+            if ((exam_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(exam_id.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            CrsTopic.GetTopicsForCourseDataTable dataTable = new CrsTopic.GetTopicsForCourseDataTable();
+            GetExamDetails.GetExamDetailsDataTable dataTable = new GetExamDetails.GetExamDetailsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -835,7 +940,7 @@ namespace exam_app.CrsTopicTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(CrsTopic dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(GetExamDetails dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -845,7 +950,7 @@ namespace exam_app.CrsTopicTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(CrsTopic dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(GetExamDetails dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -855,7 +960,7 @@ namespace exam_app.CrsTopicTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(CrsTopic dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(GetExamDetails dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -889,7 +994,7 @@ namespace exam_app.CrsTopicTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(CrsTopic dataSet) {
+        public virtual int UpdateAll(GetExamDetails dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

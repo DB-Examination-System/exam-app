@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace exam_app {
+namespace exam_app.DataSets {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace exam_app {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("InsCrsStdNum")]
+    [global::System.Xml.Serialization.XmlRootAttribute("GetStudentExamsAndGrades")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class InsCrsStdNum : global::System.Data.DataSet {
+    public partial class GetStudentExamsAndGrades : global::System.Data.DataSet {
         
-        private GetInsCrsWithStdCountDataTable tableGetInsCrsWithStdCount;
+        private GetStudentExamsAndGradesDataTable tableGetStudentExamsAndGrades;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public InsCrsStdNum() {
+        public GetStudentExamsAndGrades() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace exam_app {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected InsCrsStdNum(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected GetStudentExamsAndGrades(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace exam_app {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["GetInsCrsWithStdCount"] != null)) {
-                    base.Tables.Add(new GetInsCrsWithStdCountDataTable(ds.Tables["GetInsCrsWithStdCount"]));
+                if ((ds.Tables["GetStudentExamsAndGrades"] != null)) {
+                    base.Tables.Add(new GetStudentExamsAndGradesDataTable(ds.Tables["GetStudentExamsAndGrades"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace exam_app {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public GetInsCrsWithStdCountDataTable GetInsCrsWithStdCount {
+        public GetStudentExamsAndGradesDataTable _GetStudentExamsAndGrades {
             get {
-                return this.tableGetInsCrsWithStdCount;
+                return this.tableGetStudentExamsAndGrades;
             }
         }
         
@@ -127,7 +127,7 @@ namespace exam_app {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            InsCrsStdNum cln = ((InsCrsStdNum)(base.Clone()));
+            GetStudentExamsAndGrades cln = ((GetStudentExamsAndGrades)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace exam_app {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["GetInsCrsWithStdCount"] != null)) {
-                    base.Tables.Add(new GetInsCrsWithStdCountDataTable(ds.Tables["GetInsCrsWithStdCount"]));
+                if ((ds.Tables["GetStudentExamsAndGrades"] != null)) {
+                    base.Tables.Add(new GetStudentExamsAndGradesDataTable(ds.Tables["GetStudentExamsAndGrades"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace exam_app {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableGetInsCrsWithStdCount = ((GetInsCrsWithStdCountDataTable)(base.Tables["GetInsCrsWithStdCount"]));
+            this.tableGetStudentExamsAndGrades = ((GetStudentExamsAndGradesDataTable)(base.Tables["GetStudentExamsAndGrades"]));
             if ((initTable == true)) {
-                if ((this.tableGetInsCrsWithStdCount != null)) {
-                    this.tableGetInsCrsWithStdCount.InitVars();
+                if ((this.tableGetStudentExamsAndGrades != null)) {
+                    this.tableGetStudentExamsAndGrades.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace exam_app {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "InsCrsStdNum";
+            this.DataSetName = "GetStudentExamsAndGrades";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/InsCrsStdNum.xsd";
+            this.Namespace = "http://tempuri.org/GetStudentExamsAndGrades.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableGetInsCrsWithStdCount = new GetInsCrsWithStdCountDataTable();
-            base.Tables.Add(this.tableGetInsCrsWithStdCount);
+            this.tableGetStudentExamsAndGrades = new GetStudentExamsAndGradesDataTable();
+            base.Tables.Add(this.tableGetStudentExamsAndGrades);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeGetInsCrsWithStdCount() {
+        private bool ShouldSerialize_GetStudentExamsAndGrades() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace exam_app {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            InsCrsStdNum ds = new InsCrsStdNum();
+            GetStudentExamsAndGrades ds = new GetStudentExamsAndGrades();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,25 @@ namespace exam_app {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void GetInsCrsWithStdCountRowChangeEventHandler(object sender, GetInsCrsWithStdCountRowChangeEvent e);
+        public delegate void GetStudentExamsAndGradesRowChangeEventHandler(object sender, GetStudentExamsAndGradesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class GetInsCrsWithStdCountDataTable : global::System.Data.TypedTableBase<GetInsCrsWithStdCountRow> {
+        public partial class GetStudentExamsAndGradesDataTable : global::System.Data.TypedTableBase<GetStudentExamsAndGradesRow> {
             
-            private global::System.Data.DataColumn columnCourse_Name;
+            private global::System.Data.DataColumn columnFullName;
             
-            private global::System.Data.DataColumn columnNumber_Of_Students;
+            private global::System.Data.DataColumn columnExam_Name;
+            
+            private global::System.Data.DataColumn columnGrade;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetInsCrsWithStdCountDataTable() {
-                this.TableName = "GetInsCrsWithStdCount";
+            public GetStudentExamsAndGradesDataTable() {
+                this.TableName = "GetStudentExamsAndGrades";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +296,7 @@ namespace exam_app {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal GetInsCrsWithStdCountDataTable(global::System.Data.DataTable table) {
+            internal GetStudentExamsAndGradesDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +313,32 @@ namespace exam_app {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected GetInsCrsWithStdCountDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GetStudentExamsAndGradesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Course_NameColumn {
+            public global::System.Data.DataColumn FullNameColumn {
                 get {
-                    return this.columnCourse_Name;
+                    return this.columnFullName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Number_Of_StudentsColumn {
+            public global::System.Data.DataColumn Exam_NameColumn {
                 get {
-                    return this.columnNumber_Of_Students;
+                    return this.columnExam_Name;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GradeColumn {
+                get {
+                    return this.columnGrade;
                 }
             }
             
@@ -343,46 +353,47 @@ namespace exam_app {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetInsCrsWithStdCountRow this[int index] {
+            public GetStudentExamsAndGradesRow this[int index] {
                 get {
-                    return ((GetInsCrsWithStdCountRow)(this.Rows[index]));
+                    return ((GetStudentExamsAndGradesRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GetInsCrsWithStdCountRowChangeEventHandler GetInsCrsWithStdCountRowChanging;
+            public event GetStudentExamsAndGradesRowChangeEventHandler GetStudentExamsAndGradesRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GetInsCrsWithStdCountRowChangeEventHandler GetInsCrsWithStdCountRowChanged;
+            public event GetStudentExamsAndGradesRowChangeEventHandler GetStudentExamsAndGradesRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GetInsCrsWithStdCountRowChangeEventHandler GetInsCrsWithStdCountRowDeleting;
+            public event GetStudentExamsAndGradesRowChangeEventHandler GetStudentExamsAndGradesRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event GetInsCrsWithStdCountRowChangeEventHandler GetInsCrsWithStdCountRowDeleted;
+            public event GetStudentExamsAndGradesRowChangeEventHandler GetStudentExamsAndGradesRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddGetInsCrsWithStdCountRow(GetInsCrsWithStdCountRow row) {
+            public void AddGetStudentExamsAndGradesRow(GetStudentExamsAndGradesRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetInsCrsWithStdCountRow AddGetInsCrsWithStdCountRow(string Course_Name, int Number_Of_Students) {
-                GetInsCrsWithStdCountRow rowGetInsCrsWithStdCountRow = ((GetInsCrsWithStdCountRow)(this.NewRow()));
+            public GetStudentExamsAndGradesRow AddGetStudentExamsAndGradesRow(string FullName, string Exam_Name, int Grade) {
+                GetStudentExamsAndGradesRow rowGetStudentExamsAndGradesRow = ((GetStudentExamsAndGradesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Course_Name,
-                        Number_Of_Students};
-                rowGetInsCrsWithStdCountRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowGetInsCrsWithStdCountRow);
-                return rowGetInsCrsWithStdCountRow;
+                        FullName,
+                        Exam_Name,
+                        Grade};
+                rowGetStudentExamsAndGradesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGetStudentExamsAndGradesRow);
+                return rowGetStudentExamsAndGradesRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                GetInsCrsWithStdCountDataTable cln = ((GetInsCrsWithStdCountDataTable)(base.Clone()));
+                GetStudentExamsAndGradesDataTable cln = ((GetStudentExamsAndGradesDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -390,52 +401,57 @@ namespace exam_app {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new GetInsCrsWithStdCountDataTable();
+                return new GetStudentExamsAndGradesDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnCourse_Name = base.Columns["Course_Name"];
-                this.columnNumber_Of_Students = base.Columns["Number_Of_Students"];
+                this.columnFullName = base.Columns["FullName"];
+                this.columnExam_Name = base.Columns["Exam_Name"];
+                this.columnGrade = base.Columns["Grade"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnCourse_Name = new global::System.Data.DataColumn("Course_Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCourse_Name);
-                this.columnNumber_Of_Students = new global::System.Data.DataColumn("Number_Of_Students", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumber_Of_Students);
-                this.columnCourse_Name.AllowDBNull = false;
-                this.columnCourse_Name.MaxLength = 50;
-                this.columnNumber_Of_Students.ReadOnly = true;
+                this.columnFullName = new global::System.Data.DataColumn("FullName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFullName);
+                this.columnExam_Name = new global::System.Data.DataColumn("Exam_Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExam_Name);
+                this.columnGrade = new global::System.Data.DataColumn("Grade", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrade);
+                this.columnFullName.ReadOnly = true;
+                this.columnFullName.MaxLength = 101;
+                this.columnExam_Name.MaxLength = 10;
+                this.ExtendedProperties.Add("Generator_TablePropName", "_GetStudentExamsAndGrades");
+                this.ExtendedProperties.Add("Generator_UserTableName", "GetStudentExamsAndGrades");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetInsCrsWithStdCountRow NewGetInsCrsWithStdCountRow() {
-                return ((GetInsCrsWithStdCountRow)(this.NewRow()));
+            public GetStudentExamsAndGradesRow NewGetStudentExamsAndGradesRow() {
+                return ((GetStudentExamsAndGradesRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new GetInsCrsWithStdCountRow(builder);
+                return new GetStudentExamsAndGradesRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(GetInsCrsWithStdCountRow);
+                return typeof(GetStudentExamsAndGradesRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.GetInsCrsWithStdCountRowChanged != null)) {
-                    this.GetInsCrsWithStdCountRowChanged(this, new GetInsCrsWithStdCountRowChangeEvent(((GetInsCrsWithStdCountRow)(e.Row)), e.Action));
+                if ((this.GetStudentExamsAndGradesRowChanged != null)) {
+                    this.GetStudentExamsAndGradesRowChanged(this, new GetStudentExamsAndGradesRowChangeEvent(((GetStudentExamsAndGradesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -443,8 +459,8 @@ namespace exam_app {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.GetInsCrsWithStdCountRowChanging != null)) {
-                    this.GetInsCrsWithStdCountRowChanging(this, new GetInsCrsWithStdCountRowChangeEvent(((GetInsCrsWithStdCountRow)(e.Row)), e.Action));
+                if ((this.GetStudentExamsAndGradesRowChanging != null)) {
+                    this.GetStudentExamsAndGradesRowChanging(this, new GetStudentExamsAndGradesRowChangeEvent(((GetStudentExamsAndGradesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -452,8 +468,8 @@ namespace exam_app {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.GetInsCrsWithStdCountRowDeleted != null)) {
-                    this.GetInsCrsWithStdCountRowDeleted(this, new GetInsCrsWithStdCountRowChangeEvent(((GetInsCrsWithStdCountRow)(e.Row)), e.Action));
+                if ((this.GetStudentExamsAndGradesRowDeleted != null)) {
+                    this.GetStudentExamsAndGradesRowDeleted(this, new GetStudentExamsAndGradesRowChangeEvent(((GetStudentExamsAndGradesRow)(e.Row)), e.Action));
                 }
             }
             
@@ -461,14 +477,14 @@ namespace exam_app {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.GetInsCrsWithStdCountRowDeleting != null)) {
-                    this.GetInsCrsWithStdCountRowDeleting(this, new GetInsCrsWithStdCountRowChangeEvent(((GetInsCrsWithStdCountRow)(e.Row)), e.Action));
+                if ((this.GetStudentExamsAndGradesRowDeleting != null)) {
+                    this.GetStudentExamsAndGradesRowDeleting(this, new GetStudentExamsAndGradesRowChangeEvent(((GetStudentExamsAndGradesRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveGetInsCrsWithStdCountRow(GetInsCrsWithStdCountRow row) {
+            public void RemoveGetStudentExamsAndGradesRow(GetStudentExamsAndGradesRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -477,7 +493,7 @@ namespace exam_app {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                InsCrsStdNum ds = new InsCrsStdNum();
+                GetStudentExamsAndGrades ds = new GetStudentExamsAndGrades();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -495,7 +511,7 @@ namespace exam_app {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "GetInsCrsWithStdCountDataTable";
+                attribute2.FixedValue = "GetStudentExamsAndGradesDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -539,55 +555,99 @@ namespace exam_app {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class GetInsCrsWithStdCountRow : global::System.Data.DataRow {
+        public partial class GetStudentExamsAndGradesRow : global::System.Data.DataRow {
             
-            private GetInsCrsWithStdCountDataTable tableGetInsCrsWithStdCount;
+            private GetStudentExamsAndGradesDataTable tableGetStudentExamsAndGrades;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal GetInsCrsWithStdCountRow(global::System.Data.DataRowBuilder rb) : 
+            internal GetStudentExamsAndGradesRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableGetInsCrsWithStdCount = ((GetInsCrsWithStdCountDataTable)(this.Table));
+                this.tableGetStudentExamsAndGrades = ((GetStudentExamsAndGradesDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Course_Name {
-                get {
-                    return ((string)(this[this.tableGetInsCrsWithStdCount.Course_NameColumn]));
-                }
-                set {
-                    this[this.tableGetInsCrsWithStdCount.Course_NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Number_Of_Students {
+            public string FullName {
                 get {
                     try {
-                        return ((int)(this[this.tableGetInsCrsWithStdCount.Number_Of_StudentsColumn]));
+                        return ((string)(this[this.tableGetStudentExamsAndGrades.FullNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Number_Of_Students\' in table \'GetInsCrsWithStdCount\' is DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FullName\' in table \'GetStudentExamsAndGrades\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableGetInsCrsWithStdCount.Number_Of_StudentsColumn] = value;
+                    this[this.tableGetStudentExamsAndGrades.FullNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNumber_Of_StudentsNull() {
-                return this.IsNull(this.tableGetInsCrsWithStdCount.Number_Of_StudentsColumn);
+            public string Exam_Name {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetStudentExamsAndGrades.Exam_NameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Exam_Name\' in table \'GetStudentExamsAndGrades\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetStudentExamsAndGrades.Exam_NameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNumber_Of_StudentsNull() {
-                this[this.tableGetInsCrsWithStdCount.Number_Of_StudentsColumn] = global::System.Convert.DBNull;
+            public int Grade {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetStudentExamsAndGrades.GradeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Grade\' in table \'GetStudentExamsAndGrades\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetStudentExamsAndGrades.GradeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsFullNameNull() {
+                return this.IsNull(this.tableGetStudentExamsAndGrades.FullNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetFullNameNull() {
+                this[this.tableGetStudentExamsAndGrades.FullNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExam_NameNull() {
+                return this.IsNull(this.tableGetStudentExamsAndGrades.Exam_NameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExam_NameNull() {
+                this[this.tableGetStudentExamsAndGrades.Exam_NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGradeNull() {
+                return this.IsNull(this.tableGetStudentExamsAndGrades.GradeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGradeNull() {
+                this[this.tableGetStudentExamsAndGrades.GradeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -595,22 +655,22 @@ namespace exam_app {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class GetInsCrsWithStdCountRowChangeEvent : global::System.EventArgs {
+        public class GetStudentExamsAndGradesRowChangeEvent : global::System.EventArgs {
             
-            private GetInsCrsWithStdCountRow eventRow;
+            private GetStudentExamsAndGradesRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetInsCrsWithStdCountRowChangeEvent(GetInsCrsWithStdCountRow row, global::System.Data.DataRowAction action) {
+            public GetStudentExamsAndGradesRowChangeEvent(GetStudentExamsAndGradesRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GetInsCrsWithStdCountRow Row {
+            public GetStudentExamsAndGradesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -626,7 +686,7 @@ namespace exam_app {
         }
     }
 }
-namespace exam_app.InsCrsStdNumTableAdapters {
+namespace exam_app.DataSets.GetStudentExamsAndGradesTableAdapters {
     
     
     /// <summary>
@@ -638,7 +698,7 @@ namespace exam_app.InsCrsStdNumTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class GetInsCrsWithStdCountTableAdapter : global::System.ComponentModel.Component {
+    public partial class GetStudentExamsAndGradesTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -652,7 +712,7 @@ namespace exam_app.InsCrsStdNumTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public GetInsCrsWithStdCountTableAdapter() {
+        public GetStudentExamsAndGradesTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -749,9 +809,10 @@ namespace exam_app.InsCrsStdNumTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "GetInsCrsWithStdCount";
-            tableMapping.ColumnMappings.Add("Course_Name", "Course_Name");
-            tableMapping.ColumnMappings.Add("Number_Of_Students", "Number_Of_Students");
+            tableMapping.DataSetTable = "GetStudentExamsAndGrades";
+            tableMapping.ColumnMappings.Add("FullName", "FullName");
+            tableMapping.ColumnMappings.Add("Exam_Name", "Exam_Name");
+            tableMapping.ColumnMappings.Add("Grade", "Grade");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -759,8 +820,8 @@ namespace exam_app.InsCrsStdNumTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=.;Initial Catalog=ITIDB;Integrated Security=True;TrustServerCertifica" +
-                "te=True";
+            this._connection.ConnectionString = "Data Source=.;Initial Catalog=ITIDB;Integrated Security=True;Encrypt=True;TrustSe" +
+                "rverCertificate=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -769,20 +830,20 @@ namespace exam_app.InsCrsStdNumTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.GetInsCrsWithStdCount";
+            this._commandCollection[0].CommandText = "dbo.GetStudentExamsAndGrades";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@insId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@St_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(InsCrsStdNum.GetInsCrsWithStdCountDataTable dataTable, global::System.Nullable<int> insId) {
+        public virtual int Fill(GetStudentExamsAndGrades.GetStudentExamsAndGradesDataTable dataTable, global::System.Nullable<int> St_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((insId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(insId.Value));
+            if ((St_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(St_id.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -798,15 +859,15 @@ namespace exam_app.InsCrsStdNumTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual InsCrsStdNum.GetInsCrsWithStdCountDataTable GetData(global::System.Nullable<int> insId) {
+        public virtual GetStudentExamsAndGrades.GetStudentExamsAndGradesDataTable GetData(global::System.Nullable<int> St_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((insId.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(insId.Value));
+            if ((St_id.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(St_id.Value));
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            InsCrsStdNum.GetInsCrsWithStdCountDataTable dataTable = new InsCrsStdNum.GetInsCrsWithStdCountDataTable();
+            GetStudentExamsAndGrades.GetStudentExamsAndGradesDataTable dataTable = new GetStudentExamsAndGrades.GetStudentExamsAndGradesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -880,7 +941,7 @@ namespace exam_app.InsCrsStdNumTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(InsCrsStdNum dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(GetStudentExamsAndGrades dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -890,7 +951,7 @@ namespace exam_app.InsCrsStdNumTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(InsCrsStdNum dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(GetStudentExamsAndGrades dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -900,7 +961,7 @@ namespace exam_app.InsCrsStdNumTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(InsCrsStdNum dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(GetStudentExamsAndGrades dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -934,7 +995,7 @@ namespace exam_app.InsCrsStdNumTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(InsCrsStdNum dataSet) {
+        public virtual int UpdateAll(GetStudentExamsAndGrades dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
