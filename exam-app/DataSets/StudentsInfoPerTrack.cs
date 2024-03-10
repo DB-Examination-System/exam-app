@@ -34,6 +34,10 @@ namespace exam_app.DataSets
 {
 }
 
+namespace exam_app.DataSets
+{
+}
+
 namespace exam_app.StudentsInfoPerTrackTableAdapters {
     
     
