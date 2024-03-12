@@ -20,14 +20,16 @@ namespace exam_app
     public partial class CreateExamForm : Form
     {
 
-        int instructor_id = 1; // this is from prevoius form
+        int instructor_id ; // this is from prevoius form
+
         ItidbContext appContext = new ItidbContext();
         List<object> examDataList = new List<object>();
         List<createdExam> createdExams = new List<createdExam>();
         int selectedExamId;
-        public CreateExamForm()
+        public CreateExamForm(int _insId)
         {
             InitializeComponent();
+            instructor_id = _insId;
         }
 
         private void CreateExamForm_Load(object sender, EventArgs e)
@@ -58,53 +60,60 @@ namespace exam_app
             {
                 if ((int.Parse(cmb_noOfTFQ.Text) + (int.Parse(cmb_noChooseQ.Text))) == 10)
                 {
-                    DialogResult dialog = MessageBox.Show("Do you want to proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialog.Equals(DialogResult.Yes))
+                    if (isQuestionsAvailable())
                     {
-
-                        // generate the exam with using stored proc
-                        var out_param = new SqlParameter("@param", SqlDbType.Int);
-                        out_param.Direction = ParameterDirection.Output;
-                        var result = appContext.Database.ExecuteSqlRaw(
-                            "EXEC generateExam @courseId, @examName, @numOfTF, @numOfChoose, @examDuration, @examDate, @param OUTPUT",
-                            new SqlParameter("@courseId", (int)cmb_ins_courses.SelectedValue),
-                            new SqlParameter("@examName", txt_exam_name.Text),
-                            new SqlParameter("@numOfChoose", cmb_noChooseQ.Text),
-                            new SqlParameter("@numOfTF", cmb_noOfTFQ.Text),
-                            new SqlParameter("@examDuration", txt_exam_duration.Text),
-                            new SqlParameter("@examDate", DTP_examDate.Value),
-                            out_param);
-                        int exam_id = (int)out_param.Value;
-
-                        // display exam questions
-                        getExamQuestions(exam_id);
-
-
-                        // add the exam name to lstView and created exam into createdExams list to navigate between
-                        ListViewItem item = new ListViewItem(txt_exam_name.Text);
-                        lst_createdExam.Items.Add(item);
-                        createdExams.Add(new createdExam()
+                        DialogResult dialog = MessageBox.Show("Do you want to proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialog.Equals(DialogResult.Yes))
                         {
-                            Exam = new Exam
-                            {
-                                ExId = exam_id,
-                                ExamName = txt_exam_name.Text,
-                                ExDate = DTP_examDate.Value,
-                                ExDuration = int.Parse(txt_exam_duration.Text),
-                                CourseId = (int)cmb_ins_courses.SelectedValue,
-                            },
-                            Choose_num = int.Parse(cmb_noChooseQ.Text),
-                            TF_num = int.Parse(cmb_noOfTFQ.Text),
-                        });
-                        selectedExamId = exam_id;
 
-                        MessageBox.Show("generated successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        clear();
+                            // generate the exam with using stored proc
+                            var out_param = new SqlParameter("@param", SqlDbType.Int);
+                            out_param.Direction = ParameterDirection.Output;
+                            var result = appContext.Database.ExecuteSqlRaw(
+                                "EXEC generateExam @courseId, @examName, @numOfTF, @numOfChoose, @examDuration, @examDate, @param OUTPUT",
+                                new SqlParameter("@courseId", (int)cmb_ins_courses.SelectedValue),
+                                new SqlParameter("@examName", txt_exam_name.Text),
+                                new SqlParameter("@numOfChoose", cmb_noChooseQ.Text),
+                                new SqlParameter("@numOfTF", cmb_noOfTFQ.Text),
+                                new SqlParameter("@examDuration", txt_exam_duration.Text),
+                                new SqlParameter("@examDate", DTP_examDate.Value),
+                                out_param);
+                            int exam_id = (int)out_param.Value;
+
+                            // display exam questions
+                            getExamQuestions(exam_id);
+
+
+                            // add the exam name to lstView and created exam into createdExams list to navigate between
+                            ListViewItem item = new ListViewItem(txt_exam_name.Text);
+                            lst_createdExam.Items.Add(item);
+                            createdExams.Add(new createdExam()
+                            {
+                                Exam = new Exam
+                                {
+                                    ExId = exam_id,
+                                    ExamName = txt_exam_name.Text,
+                                    ExDate = DTP_examDate.Value,
+                                    ExDuration = int.Parse(txt_exam_duration.Text),
+                                    CourseId = (int)cmb_ins_courses.SelectedValue,
+                                },
+                                Choose_num = int.Parse(cmb_noChooseQ.Text),
+                                TF_num = int.Parse(cmb_noOfTFQ.Text),
+                            });
+                            selectedExamId = exam_id;
+
+                            MessageBox.Show("generated successfully", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            clear();
+                        }
                     }
+                    else
+                        MessageBox.Show("there is not enough questions \n exam is not created", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
                 }
                 else
                 {
-                    MessageBox.Show("total num of quesetion should be 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("total num of quesetions should be 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
             }
@@ -212,35 +221,49 @@ namespace exam_app
 
         private void btn_regenerate_Q_Click(object sender, EventArgs e)
         {
-            if (cmb_noChooseQ.SelectedIndex == -1 || cmb_noOfTFQ.SelectedIndex == -1 || cmb_ins_courses.SelectedIndex == -1)
+            if (cmb_noChooseQ.SelectedIndex == -1 || cmb_noOfTFQ.SelectedIndex == -1 || cmb_ins_courses.SelectedIndex == -1 || lst_createdExam.Items.Count == 0)
             {
                 MessageBox.Show("select  exam first");
             }
             else
             {
-                DialogResult dialog = MessageBox.Show("exam questions are giong to be regenerated \n are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialog == DialogResult.Yes)
+                if (int.Parse(cmb_noChooseQ.Text) + int.Parse(cmb_noOfTFQ.Text) == 10)
                 {
-                    appContext.Database.ExecuteSqlRaw("EXEC regenerateExamQuestions @examId, @numOfTF, @numOfChoose, @crsId",
-                       new SqlParameter("@examId", selectedExamId),
-                       new SqlParameter("@numOfTF", cmb_noOfTFQ.Text),
-                       new SqlParameter("@numOfChoose", cmb_noChooseQ.Text),
-                       new SqlParameter("@crsId", (int)cmb_ins_courses.SelectedValue)
-                       );
-
-                    getExamQuestions(selectedExamId);
-
-
-                    if (lst_createdExam.SelectedIndices.Count > 0)
+                    if (isQuestionsAvailable())
                     {
-                        createdExam exam = createdExams[lst_createdExam.SelectedIndices[0]];
-                        exam.Exam.CourseId = (int)cmb_ins_courses.SelectedValue;
-                        exam.Choose_num = int.Parse(cmb_noChooseQ.Text);
-                        exam.TF_num = int.Parse(cmb_noOfTFQ.Text);
+                        DialogResult dialog = MessageBox.Show("exam questions are giong to be regenerated \n are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (dialog == DialogResult.Yes)
+                        {
+                            appContext.Database.ExecuteSqlRaw("EXEC regenerateExamQuestions @examId, @numOfTF, @numOfChoose, @crsId",
+                               new SqlParameter("@examId", selectedExamId),
+                               new SqlParameter("@numOfTF", cmb_noOfTFQ.Text),
+                               new SqlParameter("@numOfChoose", cmb_noChooseQ.Text),
+                               new SqlParameter("@crsId", (int)cmb_ins_courses.SelectedValue)
+                               );
+
+                            getExamQuestions(selectedExamId);
+
+                            if (lst_createdExam.SelectedIndices.Count > 0)
+                            {
+                                createdExam exam = createdExams[lst_createdExam.SelectedIndices[0]];
+                                exam.Exam.CourseId = (int)cmb_ins_courses.SelectedValue;
+                                exam.Choose_num = int.Parse(cmb_noChooseQ.Text);
+                                exam.TF_num = int.Parse(cmb_noOfTFQ.Text);
+                            }
+                            clear();
+
+                        }
                     }
-                    clear();
+                    else
+                        MessageBox.Show("there is not enough questions \n questions are not regenerated", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
+                else
+                {
+                    MessageBox.Show("number of exam questions should be 10", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                }
+
+
             }
 
         }
@@ -248,7 +271,7 @@ namespace exam_app
         private void btn_del_exam_Click(object sender, EventArgs e)
         {
 
-            if (createdExams.Count() > 0 && txt_exam_name.Text !="" && lst_createdExam.SelectedItems.Count > 0)
+            if (createdExams.Count() > 0 && txt_exam_name.Text != "" && lst_createdExam.SelectedItems.Count > 0)
             {
 
                 DialogResult dialog = MessageBox.Show($"exam {txt_exam_name.Text} will be deleted \n are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -267,26 +290,50 @@ namespace exam_app
                         appContext.Exams.Remove(s);
                         appContext.SaveChanges();
                     }
-                        for (int i = lst_createdExam.Items.Count - 1; i >= 0; i--)
+                    for (int i = lst_createdExam.Items.Count - 1; i >= 0; i--)
+                    {
+                        if (lst_createdExam.Items[i].Text == txt_exam_name.Text)
                         {
-                            if (lst_createdExam.Items[i].Text == txt_exam_name.Text)
-                            {
-                                // Remove the item from the ListView
-                                lst_createdExam.Items.RemoveAt(i);
-                                createdExams.RemoveAt(i);
-                                break;
-                            }
+                            // Remove the item from the ListView
+                            lst_createdExam.Items.RemoveAt(i);
+                            createdExams.RemoveAt(i);
+                            break;
                         }
+                    }
                     DGV_exam_question.DataSource = null;
                     clear();
 
                 }
-                    
+
             }
             else
             {
                 MessageBox.Show("select exam first");
             }
+        }
+
+        private bool isQuestionsAvailable()
+        {
+            int numOfTFReqQues = int.Parse(cmb_noOfTFQ.Text);
+            int numOfChooseqQues = int.Parse(cmb_noChooseQ.Text);
+            int courseID = (int)cmb_ins_courses.SelectedValue;
+
+            int numOfTFReqAvail = appContext.Questions.Where(q => q.CourseId == courseID && q.QType == "TorF").Count();
+            int numOfChooseReqAvail = appContext.Questions.Where(q => q.CourseId == courseID && q.QType == "Choose").Count();
+
+            if (numOfTFReqAvail >= numOfTFReqQues && numOfChooseReqAvail >= numOfChooseqQues)
+                return true;
+
+            return false;
+
+        }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            InstructorMainForm insMainForm = new InstructorMainForm(instructor_id);
+            Hide();
+            insMainForm.ShowDialog();
+            Close();
         }
     }
 

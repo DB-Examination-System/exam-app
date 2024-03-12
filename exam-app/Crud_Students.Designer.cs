@@ -47,24 +47,29 @@
             gender_combo = new ComboBox();
             username_txt = new TextBox();
             username_lbl = new Label();
-            role_txt = new TextBox();
-            pass_txt = new Label();
-            textBox1 = new TextBox();
+            passw_txt = new TextBox();
             role_lbl = new Label();
             save_btn = new Button();
             std_id_txt = new TextBox();
             stdid_lbl = new Label();
             ok_btn = new Button();
+            role_txt = new TextBox();
+            birth_datelbl = new Label();
+            birthdate_picker = new DateTimePicker();
+            title_Form_lbl = new Label();
+            pass_lbl = new Label();
+            removeOk_btn = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // fname_lbl
             // 
             fname_lbl.AutoSize = true;
             fname_lbl.Font = new Font("Segoe UI", 13.8F);
-            fname_lbl.Location = new Point(12, 109);
-            fname_lbl.MinimumSize = new Size(60, 40);
+            fname_lbl.Location = new Point(16, 104);
+            fname_lbl.MinimumSize = new Size(53, 38);
             fname_lbl.Name = "fname_lbl";
-            fname_lbl.Size = new Size(124, 40);
+            fname_lbl.Size = new Size(124, 38);
             fname_lbl.TabIndex = 0;
             fname_lbl.Text = "First Name";
             // 
@@ -72,10 +77,10 @@
             // 
             lname_lbl.AutoSize = true;
             lname_lbl.Font = new Font("Segoe UI", 13.8F);
-            lname_lbl.Location = new Point(12, 172);
-            lname_lbl.MinimumSize = new Size(60, 40);
+            lname_lbl.Location = new Point(16, 168);
+            lname_lbl.MinimumSize = new Size(53, 38);
             lname_lbl.Name = "lname_lbl";
-            lname_lbl.Size = new Size(122, 40);
+            lname_lbl.Size = new Size(122, 38);
             lname_lbl.TabIndex = 1;
             lname_lbl.Text = "Last Name";
             // 
@@ -83,10 +88,10 @@
             // 
             age_lbl.AutoSize = true;
             age_lbl.Font = new Font("Segoe UI", 13.8F);
-            age_lbl.Location = new Point(12, 298);
-            age_lbl.MinimumSize = new Size(60, 40);
+            age_lbl.Location = new Point(16, 295);
+            age_lbl.MinimumSize = new Size(53, 38);
             age_lbl.Name = "age_lbl";
-            age_lbl.Size = new Size(60, 40);
+            age_lbl.Size = new Size(55, 38);
             age_lbl.TabIndex = 3;
             age_lbl.Text = "Age";
             // 
@@ -94,10 +99,10 @@
             // 
             city_lbl.AutoSize = true;
             city_lbl.Font = new Font("Segoe UI", 13.8F);
-            city_lbl.Location = new Point(12, 361);
-            city_lbl.MinimumSize = new Size(60, 40);
+            city_lbl.Location = new Point(16, 359);
+            city_lbl.MinimumSize = new Size(53, 38);
             city_lbl.Name = "city_lbl";
-            city_lbl.Size = new Size(60, 40);
+            city_lbl.Size = new Size(53, 38);
             city_lbl.TabIndex = 4;
             city_lbl.Text = "City";
             // 
@@ -105,7 +110,7 @@
             // 
             street_lbl.AutoSize = true;
             street_lbl.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            street_lbl.Location = new Point(387, 119);
+            street_lbl.Location = new Point(344, 113);
             street_lbl.Name = "street_lbl";
             street_lbl.Size = new Size(73, 31);
             street_lbl.TabIndex = 5;
@@ -117,10 +122,10 @@
             fname_txt.BorderStyle = BorderStyle.None;
             fname_txt.Font = new Font("Segoe UI", 12F);
             fname_txt.ForeColor = Color.MidnightBlue;
-            fname_txt.Location = new Point(188, 114);
-            fname_txt.MinimumSize = new Size(80, 35);
+            fname_txt.Location = new Point(167, 109);
+            fname_txt.MinimumSize = new Size(71, 35);
             fname_txt.Name = "fname_txt";
-            fname_txt.Size = new Size(125, 35);
+            fname_txt.Size = new Size(111, 35);
             fname_txt.TabIndex = 9;
             // 
             // lname_txt
@@ -129,20 +134,20 @@
             lname_txt.BorderStyle = BorderStyle.None;
             lname_txt.Font = new Font("Segoe UI", 12F);
             lname_txt.ForeColor = Color.MidnightBlue;
-            lname_txt.Location = new Point(188, 179);
-            lname_txt.MinimumSize = new Size(80, 35);
+            lname_txt.Location = new Point(167, 173);
+            lname_txt.MinimumSize = new Size(71, 35);
             lname_txt.Name = "lname_txt";
-            lname_txt.Size = new Size(125, 35);
+            lname_txt.Size = new Size(111, 35);
             lname_txt.TabIndex = 10;
             // 
             // gender_lbl
             // 
             gender_lbl.AutoSize = true;
             gender_lbl.Font = new Font("Segoe UI", 13.8F);
-            gender_lbl.Location = new Point(12, 235);
-            gender_lbl.MinimumSize = new Size(60, 40);
+            gender_lbl.Location = new Point(16, 231);
+            gender_lbl.MinimumSize = new Size(53, 38);
             gender_lbl.Name = "gender_lbl";
-            gender_lbl.Size = new Size(89, 40);
+            gender_lbl.Size = new Size(89, 38);
             gender_lbl.TabIndex = 2;
             gender_lbl.Text = "Gender";
             // 
@@ -150,7 +155,7 @@
             // 
             phone_lbl.AutoSize = true;
             phone_lbl.Font = new Font("Segoe UI", 13.8F);
-            phone_lbl.Location = new Point(387, 347);
+            phone_lbl.Location = new Point(344, 330);
             phone_lbl.Name = "phone_lbl";
             phone_lbl.Size = new Size(168, 31);
             phone_lbl.TabIndex = 7;
@@ -162,10 +167,10 @@
             age_txt.BorderStyle = BorderStyle.None;
             age_txt.Font = new Font("Segoe UI", 12F);
             age_txt.ForeColor = Color.MidnightBlue;
-            age_txt.Location = new Point(188, 303);
-            age_txt.MinimumSize = new Size(80, 35);
+            age_txt.Location = new Point(167, 297);
+            age_txt.MinimumSize = new Size(71, 35);
             age_txt.Name = "age_txt";
-            age_txt.Size = new Size(125, 35);
+            age_txt.Size = new Size(111, 35);
             age_txt.TabIndex = 12;
             // 
             // city_txt
@@ -174,10 +179,10 @@
             city_txt.BorderStyle = BorderStyle.None;
             city_txt.Font = new Font("Segoe UI", 12F);
             city_txt.ForeColor = Color.MidnightBlue;
-            city_txt.Location = new Point(188, 368);
-            city_txt.MinimumSize = new Size(80, 35);
+            city_txt.Location = new Point(167, 362);
+            city_txt.MinimumSize = new Size(71, 35);
             city_txt.Name = "city_txt";
-            city_txt.Size = new Size(125, 35);
+            city_txt.Size = new Size(111, 35);
             city_txt.TabIndex = 13;
             // 
             // street_txt
@@ -185,10 +190,10 @@
             street_txt.BackColor = Color.GhostWhite;
             street_txt.BorderStyle = BorderStyle.None;
             street_txt.Font = new Font("Segoe UI", 12F);
-            street_txt.Location = new Point(580, 115);
-            street_txt.MinimumSize = new Size(80, 35);
+            street_txt.Location = new Point(516, 110);
+            street_txt.MinimumSize = new Size(71, 35);
             street_txt.Name = "street_txt";
-            street_txt.Size = new Size(125, 35);
+            street_txt.Size = new Size(111, 35);
             street_txt.TabIndex = 14;
             // 
             // phoneNumber_txt
@@ -196,10 +201,10 @@
             phoneNumber_txt.BackColor = Color.GhostWhite;
             phoneNumber_txt.BorderStyle = BorderStyle.None;
             phoneNumber_txt.Font = new Font("Segoe UI", 12F);
-            phoneNumber_txt.Location = new Point(577, 343);
-            phoneNumber_txt.MinimumSize = new Size(80, 35);
+            phoneNumber_txt.Location = new Point(513, 327);
+            phoneNumber_txt.MinimumSize = new Size(71, 35);
             phoneNumber_txt.Name = "phoneNumber_txt";
-            phoneNumber_txt.Size = new Size(170, 35);
+            phoneNumber_txt.Size = new Size(151, 35);
             phoneNumber_txt.TabIndex = 16;
             // 
             // add_btn
@@ -207,10 +212,10 @@
             add_btn.BackColor = Color.LightSteelBlue;
             add_btn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             add_btn.ForeColor = Color.White;
-            add_btn.Location = new Point(84, 446);
-            add_btn.MinimumSize = new Size(80, 60);
+            add_btn.Location = new Point(75, 507);
+            add_btn.MinimumSize = new Size(71, 57);
             add_btn.Name = "add_btn";
-            add_btn.Size = new Size(111, 60);
+            add_btn.Size = new Size(99, 57);
             add_btn.TabIndex = 18;
             add_btn.Text = "Add";
             add_btn.UseVisualStyleBackColor = false;
@@ -221,10 +226,10 @@
             update_btn.BackColor = Color.LightSteelBlue;
             update_btn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             update_btn.ForeColor = Color.White;
-            update_btn.Location = new Point(228, 446);
-            update_btn.MinimumSize = new Size(80, 60);
+            update_btn.Location = new Point(203, 507);
+            update_btn.MinimumSize = new Size(71, 57);
             update_btn.Name = "update_btn";
-            update_btn.Size = new Size(111, 60);
+            update_btn.Size = new Size(99, 57);
             update_btn.TabIndex = 19;
             update_btn.Text = "Update";
             update_btn.UseVisualStyleBackColor = false;
@@ -235,22 +240,23 @@
             remove_btn.BackColor = Color.LightSteelBlue;
             remove_btn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             remove_btn.ForeColor = Color.White;
-            remove_btn.Location = new Point(578, 446);
-            remove_btn.MinimumSize = new Size(80, 60);
+            remove_btn.Location = new Point(514, 507);
+            remove_btn.MinimumSize = new Size(71, 57);
             remove_btn.Name = "remove_btn";
-            remove_btn.Size = new Size(111, 60);
+            remove_btn.Size = new Size(99, 57);
             remove_btn.TabIndex = 20;
             remove_btn.Text = "Remove";
             remove_btn.UseVisualStyleBackColor = false;
+            remove_btn.Click += remove_btn_Click;
             // 
             // gender_combo
             // 
             gender_combo.BackColor = Color.GhostWhite;
             gender_combo.ForeColor = Color.MidnightBlue;
             gender_combo.FormattingEnabled = true;
-            gender_combo.Location = new Point(188, 244);
+            gender_combo.Location = new Point(167, 238);
             gender_combo.Name = "gender_combo";
-            gender_combo.Size = new Size(151, 29);
+            gender_combo.Size = new Size(135, 28);
             gender_combo.TabIndex = 21;
             // 
             // username_txt
@@ -258,59 +264,38 @@
             username_txt.BackColor = Color.GhostWhite;
             username_txt.BorderStyle = BorderStyle.None;
             username_txt.Font = new Font("Segoe UI", 12F);
-            username_txt.Location = new Point(580, 172);
-            username_txt.MinimumSize = new Size(80, 35);
+            username_txt.Location = new Point(516, 164);
+            username_txt.MinimumSize = new Size(71, 35);
             username_txt.Name = "username_txt";
-            username_txt.Size = new Size(125, 35);
+            username_txt.Size = new Size(111, 35);
             username_txt.TabIndex = 23;
             // 
             // username_lbl
             // 
             username_lbl.AutoSize = true;
             username_lbl.Font = new Font("Segoe UI", 13.8F);
-            username_lbl.Location = new Point(387, 176);
+            username_lbl.Location = new Point(344, 168);
             username_lbl.Name = "username_lbl";
             username_lbl.Size = new Size(127, 31);
             username_lbl.TabIndex = 22;
             username_lbl.Text = "User Name";
             // 
-            // role_txt
+            // passw_txt
             // 
-            role_txt.BackColor = Color.GhostWhite;
-            role_txt.BorderStyle = BorderStyle.None;
-            role_txt.Font = new Font("Segoe UI", 12F);
-            role_txt.Location = new Point(580, 286);
-            role_txt.MinimumSize = new Size(80, 35);
-            role_txt.Name = "role_txt";
-            role_txt.Size = new Size(125, 35);
-            role_txt.TabIndex = 25;
-            // 
-            // pass_txt
-            // 
-            pass_txt.AutoSize = true;
-            pass_txt.Font = new Font("Segoe UI", 13.8F);
-            pass_txt.Location = new Point(387, 290);
-            pass_txt.Name = "pass_txt";
-            pass_txt.Size = new Size(110, 31);
-            pass_txt.TabIndex = 24;
-            pass_txt.Text = "Password";
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.GhostWhite;
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(580, 229);
-            textBox1.MinimumSize = new Size(80, 35);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 35);
-            textBox1.TabIndex = 27;
+            passw_txt.BackColor = Color.GhostWhite;
+            passw_txt.BorderStyle = BorderStyle.None;
+            passw_txt.Font = new Font("Segoe UI", 12F);
+            passw_txt.Location = new Point(516, 272);
+            passw_txt.MinimumSize = new Size(71, 35);
+            passw_txt.Name = "passw_txt";
+            passw_txt.Size = new Size(111, 35);
+            passw_txt.TabIndex = 25;
             // 
             // role_lbl
             // 
             role_lbl.AutoSize = true;
             role_lbl.Font = new Font("Segoe UI", 13.8F);
-            role_lbl.Location = new Point(387, 233);
+            role_lbl.Location = new Point(344, 222);
             role_lbl.Name = "role_lbl";
             role_lbl.Size = new Size(58, 31);
             role_lbl.TabIndex = 26;
@@ -321,13 +306,14 @@
             save_btn.BackColor = Color.LightSteelBlue;
             save_btn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             save_btn.ForeColor = Color.White;
-            save_btn.Location = new Point(372, 446);
-            save_btn.MinimumSize = new Size(80, 60);
+            save_btn.Location = new Point(331, 507);
+            save_btn.MinimumSize = new Size(71, 57);
             save_btn.Name = "save_btn";
-            save_btn.Size = new Size(173, 60);
+            save_btn.Size = new Size(154, 57);
             save_btn.TabIndex = 28;
             save_btn.Text = "Save Changes";
             save_btn.UseVisualStyleBackColor = false;
+            save_btn.Click += save_btn_Click;
             // 
             // std_id_txt
             // 
@@ -335,20 +321,20 @@
             std_id_txt.BorderStyle = BorderStyle.None;
             std_id_txt.Font = new Font("Segoe UI", 12F);
             std_id_txt.ForeColor = Color.MidnightBlue;
-            std_id_txt.Location = new Point(389, 25);
-            std_id_txt.MinimumSize = new Size(80, 35);
+            std_id_txt.Location = new Point(346, 24);
+            std_id_txt.MinimumSize = new Size(71, 35);
             std_id_txt.Name = "std_id_txt";
-            std_id_txt.Size = new Size(125, 35);
+            std_id_txt.Size = new Size(111, 35);
             std_id_txt.TabIndex = 30;
             // 
             // stdid_lbl
             // 
             stdid_lbl.AutoSize = true;
             stdid_lbl.Font = new Font("Segoe UI", 13.8F);
-            stdid_lbl.Location = new Point(178, 25);
-            stdid_lbl.MinimumSize = new Size(60, 40);
+            stdid_lbl.Location = new Point(158, 24);
+            stdid_lbl.MinimumSize = new Size(53, 38);
             stdid_lbl.Name = "stdid_lbl";
-            stdid_lbl.Size = new Size(178, 40);
+            stdid_lbl.Size = new Size(178, 38);
             stdid_lbl.TabIndex = 29;
             stdid_lbl.Text = "Enter Student Id";
             // 
@@ -357,34 +343,117 @@
             ok_btn.BackColor = Color.LightSteelBlue;
             ok_btn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
             ok_btn.ForeColor = Color.White;
-            ok_btn.Location = new Point(580, 10);
-            ok_btn.MinimumSize = new Size(80, 60);
+            ok_btn.Location = new Point(516, 10);
+            ok_btn.MinimumSize = new Size(71, 57);
             ok_btn.Name = "ok_btn";
-            ok_btn.Size = new Size(97, 60);
+            ok_btn.Size = new Size(86, 57);
             ok_btn.TabIndex = 31;
             ok_btn.Text = "Ok";
             ok_btn.UseVisualStyleBackColor = false;
             ok_btn.Click += ok_btn_Click;
             // 
+            // role_txt
+            // 
+            role_txt.BackColor = Color.GhostWhite;
+            role_txt.BorderStyle = BorderStyle.None;
+            role_txt.Font = new Font("Segoe UI", 12F);
+            role_txt.Location = new Point(516, 218);
+            role_txt.MinimumSize = new Size(71, 35);
+            role_txt.Name = "role_txt";
+            role_txt.Size = new Size(111, 35);
+            role_txt.TabIndex = 32;
+            // 
+            // birth_datelbl
+            // 
+            birth_datelbl.AutoSize = true;
+            birth_datelbl.Font = new Font("Segoe UI", 13.8F);
+            birth_datelbl.Location = new Point(16, 423);
+            birth_datelbl.MinimumSize = new Size(53, 38);
+            birth_datelbl.Name = "birth_datelbl";
+            birth_datelbl.Size = new Size(116, 38);
+            birth_datelbl.TabIndex = 33;
+            birth_datelbl.Text = "Birth Date";
+            // 
+            // birthdate_picker
+            // 
+            birthdate_picker.Location = new Point(139, 427);
+            birthdate_picker.Name = "birthdate_picker";
+            birthdate_picker.Size = new Size(223, 27);
+            birthdate_picker.TabIndex = 34;
+            // 
+            // title_Form_lbl
+            // 
+            title_Form_lbl.AutoSize = true;
+            title_Form_lbl.Font = new Font("Century Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            title_Form_lbl.ForeColor = Color.MidnightBlue;
+            title_Form_lbl.Location = new Point(239, 17);
+            title_Form_lbl.Name = "title_Form_lbl";
+            title_Form_lbl.Size = new Size(272, 47);
+            title_Form_lbl.TabIndex = 35;
+            title_Form_lbl.Text = "Student Form";
+            // 
+            // pass_lbl
+            // 
+            pass_lbl.AutoSize = true;
+            pass_lbl.Font = new Font("Segoe UI", 13.8F);
+            pass_lbl.Location = new Point(346, 276);
+            pass_lbl.Name = "pass_lbl";
+            pass_lbl.Size = new Size(110, 31);
+            pass_lbl.TabIndex = 36;
+            pass_lbl.Text = "Password";
+            // 
+            // removeOk_btn
+            // 
+            removeOk_btn.BackColor = Color.LightSteelBlue;
+            removeOk_btn.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            removeOk_btn.ForeColor = Color.White;
+            removeOk_btn.Location = new Point(516, 10);
+            removeOk_btn.MinimumSize = new Size(71, 57);
+            removeOk_btn.Name = "removeOk_btn";
+            removeOk_btn.Size = new Size(86, 57);
+            removeOk_btn.TabIndex = 37;
+            removeOk_btn.Text = "Ok";
+            removeOk_btn.UseVisualStyleBackColor = false;
+            removeOk_btn.Click += removeOk_btn_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.LightSteelBlue;
+            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(303, 600);
+            button1.MinimumSize = new Size(71, 57);
+            button1.Name = "button1";
+            button1.Size = new Size(99, 57);
+            button1.TabIndex = 18;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // Crud_Students
             // 
-            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(800, 528);
+            ClientSize = new Size(711, 679);
+            Controls.Add(removeOk_btn);
+            Controls.Add(pass_lbl);
+            Controls.Add(title_Form_lbl);
+            Controls.Add(birthdate_picker);
+            Controls.Add(birth_datelbl);
+            Controls.Add(role_txt);
             Controls.Add(ok_btn);
             Controls.Add(std_id_txt);
             Controls.Add(stdid_lbl);
             Controls.Add(save_btn);
-            Controls.Add(textBox1);
             Controls.Add(role_lbl);
-            Controls.Add(role_txt);
-            Controls.Add(pass_txt);
+            Controls.Add(passw_txt);
             Controls.Add(username_txt);
             Controls.Add(username_lbl);
             Controls.Add(gender_combo);
             Controls.Add(remove_btn);
             Controls.Add(update_btn);
+            Controls.Add(button1);
             Controls.Add(add_btn);
             Controls.Add(phoneNumber_txt);
             Controls.Add(street_txt);
@@ -428,13 +497,18 @@
         private ComboBox gender_combo;
         private TextBox username_txt;
         private Label username_lbl;
-        private TextBox role_txt;
-        private Label pass_txt;
-        private TextBox textBox1;
+        private TextBox passw_txt;
         private Label role_lbl;
         private Button save_btn;
         private TextBox std_id_txt;
         private Label stdid_lbl;
         private Button ok_btn;
+        private TextBox role_txt;
+        private Label birth_datelbl;
+        private DateTimePicker birthdate_picker;
+        private Label title_Form_lbl;
+        private Label pass_lbl;
+        private Button removeOk_btn;
+        private Button button1;
     }
 }
