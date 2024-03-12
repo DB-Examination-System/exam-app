@@ -14,7 +14,7 @@ namespace exam_app
 			ApplicationConfiguration.Initialize();
 			//Application.Run(new Form1());
 
-			Application.Run(new GetExamDetailsReportForm());
+			Application.Run(new LoginForm());
 
             
 

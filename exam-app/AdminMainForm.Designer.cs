@@ -33,6 +33,7 @@
 			btn_student_management = new Button();
 			btn_ins_Management = new Button();
 			btn_assign_courses_ins = new Button();
+			btn_reports = new Button();
 			SuspendLayout();
 			// 
 			// label1
@@ -58,9 +59,9 @@
 			// btn_student_management
 			// 
 			btn_student_management.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-			btn_student_management.Location = new Point(480, 258);
+			btn_student_management.Location = new Point(119, 263);
 			btn_student_management.Name = "btn_student_management";
-			btn_student_management.Size = new Size(287, 61);
+			btn_student_management.Size = new Size(394, 130);
 			btn_student_management.TabIndex = 1;
 			btn_student_management.Text = "Student Management";
 			btn_student_management.UseVisualStyleBackColor = true;
@@ -69,9 +70,9 @@
 			// btn_ins_Management
 			// 
 			btn_ins_Management.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-			btn_ins_Management.Location = new Point(480, 399);
+			btn_ins_Management.Location = new Point(703, 263);
 			btn_ins_Management.Name = "btn_ins_Management";
-			btn_ins_Management.Size = new Size(287, 61);
+			btn_ins_Management.Size = new Size(394, 130);
 			btn_ins_Management.TabIndex = 1;
 			btn_ins_Management.Text = "Instructor Management";
 			btn_ins_Management.UseVisualStyleBackColor = true;
@@ -80,19 +81,31 @@
 			// btn_assign_courses_ins
 			// 
 			btn_assign_courses_ins.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-			btn_assign_courses_ins.Location = new Point(480, 481);
+			btn_assign_courses_ins.Location = new Point(119, 525);
 			btn_assign_courses_ins.Name = "btn_assign_courses_ins";
-			btn_assign_courses_ins.Size = new Size(287, 61);
+			btn_assign_courses_ins.Size = new Size(394, 130);
 			btn_assign_courses_ins.TabIndex = 1;
 			btn_assign_courses_ins.Text = "Instrucors Courses";
 			btn_assign_courses_ins.UseVisualStyleBackColor = true;
 			btn_assign_courses_ins.Click += btn_assign_courses_ins_Click;
+			// 
+			// btn_reports
+			// 
+			btn_reports.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+			btn_reports.Location = new Point(703, 525);
+			btn_reports.Name = "btn_reports";
+			btn_reports.Size = new Size(394, 130);
+			btn_reports.TabIndex = 1;
+			btn_reports.Text = "Reports Dashboard";
+			btn_reports.UseVisualStyleBackColor = true;
+			btn_reports.Click += btn_reports_Click;
 			// 
 			// AdminMainForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(1358, 767);
+			Controls.Add(btn_reports);
 			Controls.Add(btn_assign_courses_ins);
 			Controls.Add(btn_ins_Management);
 			Controls.Add(btn_student_management);
@@ -111,5 +124,6 @@
         private Button btn_student_management;
         private Button btn_ins_Management;
         private Button btn_assign_courses_ins;
-    }
+		private Button btn_reports;
+	}
 }

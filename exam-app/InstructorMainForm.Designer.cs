@@ -34,6 +34,7 @@
 			btn_questions = new Button();
 			btn_exams = new Button();
 			btn_showGrades = new Button();
+			btn_reports = new Button();
 			SuspendLayout();
 			// 
 			// label1
@@ -68,7 +69,7 @@
 			// btn_questions
 			// 
 			btn_questions.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			btn_questions.Location = new Point(452, 123);
+			btn_questions.Location = new Point(34, 200);
 			btn_questions.Name = "btn_questions";
 			btn_questions.Size = new Size(292, 58);
 			btn_questions.TabIndex = 3;
@@ -90,7 +91,7 @@
 			// btn_showGrades
 			// 
 			btn_showGrades.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-			btn_showGrades.Location = new Point(452, 277);
+			btn_showGrades.Location = new Point(452, 297);
 			btn_showGrades.Name = "btn_showGrades";
 			btn_showGrades.Size = new Size(292, 58);
 			btn_showGrades.TabIndex = 3;
@@ -98,11 +99,23 @@
 			btn_showGrades.UseVisualStyleBackColor = true;
 			btn_showGrades.Click += btn_showGrades_Click;
 			// 
+			// btn_reports
+			// 
+			btn_reports.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btn_reports.Location = new Point(34, 297);
+			btn_reports.Name = "btn_reports";
+			btn_reports.Size = new Size(292, 58);
+			btn_reports.TabIndex = 3;
+			btn_reports.Text = "Reports Dashboard";
+			btn_reports.UseVisualStyleBackColor = true;
+			btn_reports.Click += btn_reports_Click;
+			// 
 			// InstructorMainForm
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(800, 450);
+			Controls.Add(btn_reports);
 			Controls.Add(btn_showGrades);
 			Controls.Add(btn_exams);
 			Controls.Add(btn_questions);
@@ -124,5 +137,6 @@
         private Button btn_questions;
         private Button btn_exams;
         private Button btn_showGrades;
-    }
+		private Button btn_reports;
+	}
 }
