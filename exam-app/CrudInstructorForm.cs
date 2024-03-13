@@ -100,9 +100,9 @@ namespace exam_app
             {
 
                 DateTime selectedBirthDate = dtp_birthdate.Value;
-                if (selectedBirthDate.Year <= 1990)
+                if (selectedBirthDate.Year <= 1970)
                 {
-                    MessageBox.Show("Please select a date of birth after 1990.");
+                    MessageBox.Show("Please select a date of birth after 1970.");
                     return;
                 }
                 instructor.InsFname = txt_fname.Text;
