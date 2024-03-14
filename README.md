@@ -36,6 +36,6 @@ It has been an absolute pleasure collaborating with such an amazing team:
 
 ## Explore Our Project on linkedin 
 
- [Project on linked in]([https://lnkd.in/dvHJtBzi](https://www.linkedin.com/posts/mostafa-ali-462152203_dotnet-dotnetcore-aspnetcore-activity-7174181027295150081-BO-E?utm_source=share&utm_medium=member_desktop))
+[Project on Linked in ](https://lnkd.in/dvHJtBzi)
 
 
