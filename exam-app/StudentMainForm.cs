@@ -36,7 +36,7 @@ namespace exam_app
             var st = ITIContext.Students.FirstOrDefault(s => s.StId == currStdId);
             if (st != null)
             {
-                label_name.Text = "Name : " + st.StFname.TrimStart().TrimEnd() + " " + st.StFname.TrimStart().TrimEnd();
+                label_name.Text = "Name : " + st.StFname.TrimStart().TrimEnd() + " " + st.StLname.TrimStart().TrimEnd();
             }
             var track = ITIContext.StudentsInTracks.Include(t => t.Track).FirstOrDefault(s => s.StudentId == currStdId);
             if (track != null)
